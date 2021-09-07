@@ -1,0 +1,18 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='v1', url='', help=''),
+  bgpConfiguration: (import 'bgpConfiguration.libsonnet'),
+  bgpPeer: (import 'bgpPeer.libsonnet'),
+  blockAffinity: (import 'blockAffinity.libsonnet'),
+  clusterInformation: (import 'clusterInformation.libsonnet'),
+  felixConfiguration: (import 'felixConfiguration.libsonnet'),
+  globalNetworkPolicy: (import 'globalNetworkPolicy.libsonnet'),
+  globalNetworkSet: (import 'globalNetworkSet.libsonnet'),
+  hostEndpoint: (import 'hostEndpoint.libsonnet'),
+  ipamBlock: (import 'ipamBlock.libsonnet'),
+  ipamConfig: (import 'ipamConfig.libsonnet'),
+  ipamHandle: (import 'ipamHandle.libsonnet'),
+  kubeControllersConfiguration: (import 'kubeControllersConfiguration.libsonnet'),
+  networkPolicy: (import 'networkPolicy.libsonnet'),
+  networkSet: (import 'networkSet.libsonnet'),
+}
