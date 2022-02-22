@@ -1,10 +1,10 @@
 ---
-permalink: /3.16/crd/v1/bgpPeer/
+permalink: /3.22/crd/v1/bgpConfiguration/
 ---
 
-# crd.v1.bgpPeer
+# crd.v1.bgpConfiguration
 
-
+"BGPConfiguration contains the configuration for any BGP routing."
 
 ## Index
 
@@ -33,16 +33,19 @@ permalink: /3.16/crd/v1/bgpPeer/
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
   * [`fn withAsNumber(asNumber)`](#fn-specwithasnumber)
-  * [`fn withKeepOriginalNextHop(keepOriginalNextHop)`](#fn-specwithkeeporiginalnexthop)
-  * [`fn withNode(node)`](#fn-specwithnode)
-  * [`fn withNodeSelector(nodeSelector)`](#fn-specwithnodeselector)
-  * [`fn withPeerIP(peerIP)`](#fn-specwithpeerip)
-  * [`fn withPeerSelector(peerSelector)`](#fn-specwithpeerselector)
-  * [`obj spec.password`](#obj-specpassword)
-    * [`obj spec.password.secretKeyRef`](#obj-specpasswordsecretkeyref)
-      * [`fn withKey(key)`](#fn-specpasswordsecretkeyrefwithkey)
-      * [`fn withName(name)`](#fn-specpasswordsecretkeyrefwithname)
-      * [`fn withOptional(optional)`](#fn-specpasswordsecretkeyrefwithoptional)
+  * [`fn withCommunities(communities)`](#fn-specwithcommunities)
+  * [`fn withCommunitiesMixin(communities)`](#fn-specwithcommunitiesmixin)
+  * [`fn withListenPort(listenPort)`](#fn-specwithlistenport)
+  * [`fn withLogSeverityScreen(logSeverityScreen)`](#fn-specwithlogseverityscreen)
+  * [`fn withNodeToNodeMeshEnabled(nodeToNodeMeshEnabled)`](#fn-specwithnodetonodemeshenabled)
+  * [`fn withPrefixAdvertisements(prefixAdvertisements)`](#fn-specwithprefixadvertisements)
+  * [`fn withPrefixAdvertisementsMixin(prefixAdvertisements)`](#fn-specwithprefixadvertisementsmixin)
+  * [`fn withServiceClusterIPs(serviceClusterIPs)`](#fn-specwithserviceclusterips)
+  * [`fn withServiceClusterIPsMixin(serviceClusterIPs)`](#fn-specwithserviceclusteripsmixin)
+  * [`fn withServiceExternalIPs(serviceExternalIPs)`](#fn-specwithserviceexternalips)
+  * [`fn withServiceExternalIPsMixin(serviceExternalIPs)`](#fn-specwithserviceexternalipsmixin)
+  * [`fn withServiceLoadBalancerIPs(serviceLoadBalancerIPs)`](#fn-specwithserviceloadbalancerips)
+  * [`fn withServiceLoadBalancerIPsMixin(serviceLoadBalancerIPs)`](#fn-specwithserviceloadbalanceripsmixin)
 
 ## Fields
 
@@ -52,7 +55,7 @@ permalink: /3.16/crd/v1/bgpPeer/
 new(name)
 ```
 
-new returns an instance of BGPPeer
+new returns an instance of BGPConfiguration
 
 ## obj metadata
 
@@ -238,7 +241,7 @@ withUid(uid)
 
 ## obj spec
 
-"BGPPeerSpec contains the specification for a BGPPeer resource."
+"BGPConfigurationSpec contains the values of the BGP configuration."
 
 ### fn spec.withAsNumber
 
@@ -246,76 +249,118 @@ withUid(uid)
 withAsNumber(asNumber)
 ```
 
-"The AS Number of the peer."
+"ASNumber is the default AS number used by a node. [Default: 64512]"
 
-### fn spec.withKeepOriginalNextHop
-
-```ts
-withKeepOriginalNextHop(keepOriginalNextHop)
-```
-
-"Option to keep the original nexthop field when routes are sent to a BGP Peer. Setting \"true\" configures the selected BGP Peers node to use the \"next hop keep;\" instead of \"next hop self;\"(default) in the specific branch of the Node on \"bird.cfg\"."
-
-### fn spec.withNode
+### fn spec.withCommunities
 
 ```ts
-withNode(node)
+withCommunities(communities)
 ```
 
-"The node name identifying the Calico node instance that is peering with this peer. If this is not set, this represents a global peer, i.e. a peer that peers with every node in the deployment."
+"Communities is a list of BGP community values and their arbitrary names for tagging routes."
 
-### fn spec.withNodeSelector
+### fn spec.withCommunitiesMixin
 
 ```ts
-withNodeSelector(nodeSelector)
+withCommunitiesMixin(communities)
 ```
 
-"Selector for the nodes that should have this peering.  When this is set, the Node field must be empty."
+"Communities is a list of BGP community values and their arbitrary names for tagging routes."
 
-### fn spec.withPeerIP
+**Note:** This function appends passed data to existing values
+
+### fn spec.withListenPort
 
 ```ts
-withPeerIP(peerIP)
+withListenPort(listenPort)
 ```
 
-"The IP address of the peer followed by an optional port number to peer with. If port number is given, format should be `[<IPv6>]:port` or `<IPv4>:<port>` for IPv4. If optional port number is not set, and this peer IP and ASNumber belongs to a calico/node with ListenPort set in BGPConfiguration, then we use that port to peer."
+"ListenPort is the port where BGP protocol should listen. Defaults to 179"
 
-### fn spec.withPeerSelector
+### fn spec.withLogSeverityScreen
 
 ```ts
-withPeerSelector(peerSelector)
+withLogSeverityScreen(logSeverityScreen)
 ```
 
-"Selector for the remote nodes to peer with.  When this is set, the PeerIP and ASNumber fields must be empty.  For each peering between the local node and selected remote nodes, we configure an IPv4 peering if both ends have NodeBGPSpec.IPv4Address specified, and an IPv6 peering if both ends have NodeBGPSpec.IPv6Address specified.  The remote AS number comes from the remote node’s NodeBGPSpec.ASNumber, or the global default if that is not set."
+"LogSeverityScreen is the log severity above which logs are sent to the stdout. [Default: INFO]"
 
-## obj spec.password
-
-"Optional BGP password for the peerings generated by this BGPPeer resource."
-
-## obj spec.password.secretKeyRef
-
-"Selects a key of a secret in the node pod's namespace."
-
-### fn spec.password.secretKeyRef.withKey
+### fn spec.withNodeToNodeMeshEnabled
 
 ```ts
-withKey(key)
+withNodeToNodeMeshEnabled(nodeToNodeMeshEnabled)
 ```
 
-"The key of the secret to select from.  Must be a valid secret key."
+"NodeToNodeMeshEnabled sets whether full node to node BGP mesh is enabled. [Default: true]"
 
-### fn spec.password.secretKeyRef.withName
+### fn spec.withPrefixAdvertisements
 
 ```ts
-withName(name)
+withPrefixAdvertisements(prefixAdvertisements)
 ```
 
-"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+"PrefixAdvertisements contains per-prefix advertisement configuration."
 
-### fn spec.password.secretKeyRef.withOptional
+### fn spec.withPrefixAdvertisementsMixin
 
 ```ts
-withOptional(optional)
+withPrefixAdvertisementsMixin(prefixAdvertisements)
 ```
 
-"Specify whether the Secret or its key must be defined"
+"PrefixAdvertisements contains per-prefix advertisement configuration."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withServiceClusterIPs
+
+```ts
+withServiceClusterIPs(serviceClusterIPs)
+```
+
+"ServiceClusterIPs are the CIDR blocks from which service cluster IPs are allocated. If specified, Calico will advertise these blocks, as well as any cluster IPs within them."
+
+### fn spec.withServiceClusterIPsMixin
+
+```ts
+withServiceClusterIPsMixin(serviceClusterIPs)
+```
+
+"ServiceClusterIPs are the CIDR blocks from which service cluster IPs are allocated. If specified, Calico will advertise these blocks, as well as any cluster IPs within them."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withServiceExternalIPs
+
+```ts
+withServiceExternalIPs(serviceExternalIPs)
+```
+
+"ServiceExternalIPs are the CIDR blocks for Kubernetes Service External IPs. Kubernetes Service ExternalIPs will only be advertised if they are within one of these blocks."
+
+### fn spec.withServiceExternalIPsMixin
+
+```ts
+withServiceExternalIPsMixin(serviceExternalIPs)
+```
+
+"ServiceExternalIPs are the CIDR blocks for Kubernetes Service External IPs. Kubernetes Service ExternalIPs will only be advertised if they are within one of these blocks."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withServiceLoadBalancerIPs
+
+```ts
+withServiceLoadBalancerIPs(serviceLoadBalancerIPs)
+```
+
+"ServiceLoadBalancerIPs are the CIDR blocks for Kubernetes Service LoadBalancer IPs. Kubernetes Service status.LoadBalancer.Ingress IPs will only be advertised if they are within one of these blocks."
+
+### fn spec.withServiceLoadBalancerIPsMixin
+
+```ts
+withServiceLoadBalancerIPsMixin(serviceLoadBalancerIPs)
+```
+
+"ServiceLoadBalancerIPs are the CIDR blocks for Kubernetes Service LoadBalancer IPs. Kubernetes Service status.LoadBalancer.Ingress IPs will only be advertised if they are within one of these blocks."
+
+**Note:** This function appends passed data to existing values

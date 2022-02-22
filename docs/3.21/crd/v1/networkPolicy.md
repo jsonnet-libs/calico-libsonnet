@@ -1,8 +1,8 @@
 ---
-permalink: /3.16/crd/v1/bgpPeer/
+permalink: /3.21/crd/v1/networkPolicy/
 ---
 
-# crd.v1.bgpPeer
+# crd.v1.networkPolicy
 
 
 
@@ -32,17 +32,15 @@ permalink: /3.16/crd/v1/bgpPeer/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAsNumber(asNumber)`](#fn-specwithasnumber)
-  * [`fn withKeepOriginalNextHop(keepOriginalNextHop)`](#fn-specwithkeeporiginalnexthop)
-  * [`fn withNode(node)`](#fn-specwithnode)
-  * [`fn withNodeSelector(nodeSelector)`](#fn-specwithnodeselector)
-  * [`fn withPeerIP(peerIP)`](#fn-specwithpeerip)
-  * [`fn withPeerSelector(peerSelector)`](#fn-specwithpeerselector)
-  * [`obj spec.password`](#obj-specpassword)
-    * [`obj spec.password.secretKeyRef`](#obj-specpasswordsecretkeyref)
-      * [`fn withKey(key)`](#fn-specpasswordsecretkeyrefwithkey)
-      * [`fn withName(name)`](#fn-specpasswordsecretkeyrefwithname)
-      * [`fn withOptional(optional)`](#fn-specpasswordsecretkeyrefwithoptional)
+  * [`fn withEgress(egress)`](#fn-specwithegress)
+  * [`fn withEgressMixin(egress)`](#fn-specwithegressmixin)
+  * [`fn withIngress(ingress)`](#fn-specwithingress)
+  * [`fn withIngressMixin(ingress)`](#fn-specwithingressmixin)
+  * [`fn withOrder(order)`](#fn-specwithorder)
+  * [`fn withSelector(selector)`](#fn-specwithselector)
+  * [`fn withServiceAccountSelector(serviceAccountSelector)`](#fn-specwithserviceaccountselector)
+  * [`fn withTypes(types)`](#fn-specwithtypes)
+  * [`fn withTypesMixin(types)`](#fn-specwithtypesmixin)
 
 ## Fields
 
@@ -52,7 +50,7 @@ permalink: /3.16/crd/v1/bgpPeer/
 new(name)
 ```
 
-new returns an instance of BGPPeer
+new returns an instance of NetworkPolicy
 
 ## obj metadata
 
@@ -238,84 +236,82 @@ withUid(uid)
 
 ## obj spec
 
-"BGPPeerSpec contains the specification for a BGPPeer resource."
 
-### fn spec.withAsNumber
 
-```ts
-withAsNumber(asNumber)
-```
-
-"The AS Number of the peer."
-
-### fn spec.withKeepOriginalNextHop
+### fn spec.withEgress
 
 ```ts
-withKeepOriginalNextHop(keepOriginalNextHop)
+withEgress(egress)
 ```
 
-"Option to keep the original nexthop field when routes are sent to a BGP Peer. Setting \"true\" configures the selected BGP Peers node to use the \"next hop keep;\" instead of \"next hop self;\"(default) in the specific branch of the Node on \"bird.cfg\"."
+"The ordered set of egress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
 
-### fn spec.withNode
+### fn spec.withEgressMixin
 
 ```ts
-withNode(node)
+withEgressMixin(egress)
 ```
 
-"The node name identifying the Calico node instance that is peering with this peer. If this is not set, this represents a global peer, i.e. a peer that peers with every node in the deployment."
+"The ordered set of egress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
 
-### fn spec.withNodeSelector
+**Note:** This function appends passed data to existing values
+
+### fn spec.withIngress
 
 ```ts
-withNodeSelector(nodeSelector)
+withIngress(ingress)
 ```
 
-"Selector for the nodes that should have this peering.  When this is set, the Node field must be empty."
+"The ordered set of ingress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
 
-### fn spec.withPeerIP
+### fn spec.withIngressMixin
 
 ```ts
-withPeerIP(peerIP)
+withIngressMixin(ingress)
 ```
 
-"The IP address of the peer followed by an optional port number to peer with. If port number is given, format should be `[<IPv6>]:port` or `<IPv4>:<port>` for IPv4. If optional port number is not set, and this peer IP and ASNumber belongs to a calico/node with ListenPort set in BGPConfiguration, then we use that port to peer."
+"The ordered set of ingress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
 
-### fn spec.withPeerSelector
+**Note:** This function appends passed data to existing values
+
+### fn spec.withOrder
 
 ```ts
-withPeerSelector(peerSelector)
+withOrder(order)
 ```
 
-"Selector for the remote nodes to peer with.  When this is set, the PeerIP and ASNumber fields must be empty.  For each peering between the local node and selected remote nodes, we configure an IPv4 peering if both ends have NodeBGPSpec.IPv4Address specified, and an IPv6 peering if both ends have NodeBGPSpec.IPv6Address specified.  The remote AS number comes from the remote node’s NodeBGPSpec.ASNumber, or the global default if that is not set."
+"Order is an optional field that specifies the order in which the policy is applied. Policies with higher \"order\" are applied after those with lower order.  If the order is omitted, it may be considered to be \"infinite\" - i.e. the policy will be applied last.  Policies with identical order will be applied in alphanumerical order based on the Policy \"Name\"."
 
-## obj spec.password
-
-"Optional BGP password for the peerings generated by this BGPPeer resource."
-
-## obj spec.password.secretKeyRef
-
-"Selects a key of a secret in the node pod's namespace."
-
-### fn spec.password.secretKeyRef.withKey
+### fn spec.withSelector
 
 ```ts
-withKey(key)
+withSelector(selector)
 ```
 
-"The key of the secret to select from.  Must be a valid secret key."
+"The selector is an expression used to pick pick out the endpoints that the policy should be applied to. \n Selector expressions follow this syntax: \n \tlabel == \"string_literal\"  ->  comparison, e.g. my_label == \"foo bar\" \tlabel != \"string_literal\"   ->  not equal; also matches if label is not present \tlabel in { \"a\", \"b\", \"c\", ... }  ->  true if the value of label X is one of \"a\", \"b\", \"c\" \tlabel not in { \"a\", \"b\", \"c\", ... }  ->  true if the value of label X is not one of \"a\", \"b\", \"c\" \thas(label_name)  -> True if that label is present \t! expr -> negation of expr \texpr && expr  -> Short-circuit and \texpr || expr  -> Short-circuit or \t( expr ) -> parens for grouping \tall() or the empty selector -> matches all endpoints. \n Label names are allowed to contain alphanumerics, -, _ and /. String literals are more permissive but they do not support escape characters. \n Examples (with made-up labels): \n \ttype == \"webserver\" && deployment == \"prod\" \ttype in {\"frontend\", \"backend\"} \tdeployment != \"dev\" \t! has(label_name)"
 
-### fn spec.password.secretKeyRef.withName
+### fn spec.withServiceAccountSelector
 
 ```ts
-withName(name)
+withServiceAccountSelector(serviceAccountSelector)
 ```
 
-"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+"ServiceAccountSelector is an optional field for an expression used to select a pod based on service accounts."
 
-### fn spec.password.secretKeyRef.withOptional
+### fn spec.withTypes
 
 ```ts
-withOptional(optional)
+withTypes(types)
 ```
 
-"Specify whether the Secret or its key must be defined"
+"Types indicates whether this policy applies to ingress, or to egress, or to both.  When not explicitly specified (and so the value on creation is empty or nil), Calico defaults Types according to what Ingress and Egress are present in the policy.  The default is: \n - [ PolicyTypeIngress ], if there are no Egress rules (including the case where there are   also no Ingress rules) \n - [ PolicyTypeEgress ], if there are Egress rules but no Ingress rules \n - [ PolicyTypeIngress, PolicyTypeEgress ], if there are both Ingress and Egress rules. \n When the policy is read back again, Types will always be one of these values, never empty or nil."
+
+### fn spec.withTypesMixin
+
+```ts
+withTypesMixin(types)
+```
+
+"Types indicates whether this policy applies to ingress, or to egress, or to both.  When not explicitly specified (and so the value on creation is empty or nil), Calico defaults Types according to what Ingress and Egress are present in the policy.  The default is: \n - [ PolicyTypeIngress ], if there are no Egress rules (including the case where there are   also no Ingress rules) \n - [ PolicyTypeEgress ], if there are Egress rules but no Ingress rules \n - [ PolicyTypeIngress, PolicyTypeEgress ], if there are both Ingress and Egress rules. \n When the policy is read back again, Types will always be one of these values, never empty or nil."
+
+**Note:** This function appends passed data to existing values

@@ -32,6 +32,8 @@ permalink: /3.16/crd/v1/felixConfiguration/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
+  * [`fn withAllowIPIPPacketsFromWorkloads(allowIPIPPacketsFromWorkloads)`](#fn-specwithallowipippacketsfromworkloads)
+  * [`fn withAllowVXLANPacketsFromWorkloads(allowVXLANPacketsFromWorkloads)`](#fn-specwithallowvxlanpacketsfromworkloads)
   * [`fn withAwsSrcDstCheck(awsSrcDstCheck)`](#fn-specwithawssrcdstcheck)
   * [`fn withBpfConnectTimeLoadBalancingEnabled(bpfConnectTimeLoadBalancingEnabled)`](#fn-specwithbpfconnecttimeloadbalancingenabled)
   * [`fn withBpfDataIfacePattern(bpfDataIfacePattern)`](#fn-specwithbpfdataifacepattern)
@@ -323,6 +325,22 @@ withUid(uid)
 
 "FelixConfigurationSpec contains the values of the Felix configuration."
 
+### fn spec.withAllowIPIPPacketsFromWorkloads
+
+```ts
+withAllowIPIPPacketsFromWorkloads(allowIPIPPacketsFromWorkloads)
+```
+
+"AllowIPIPPacketsFromWorkloads controls whether Felix will add a rule to drop IPIP encapsulated traffic from workloads [Default: false]"
+
+### fn spec.withAllowVXLANPacketsFromWorkloads
+
+```ts
+withAllowVXLANPacketsFromWorkloads(allowVXLANPacketsFromWorkloads)
+```
+
+"AllowVXLANPacketsFromWorkloads controls whether Felix will add a rule to drop VXLAN encapsulated traffic from workloads [Default: false]"
+
 ### fn spec.withAwsSrcDstCheck
 
 ```ts
@@ -409,7 +427,7 @@ withBpfLogLevel(bpfLogLevel)
 withChainInsertMode(chainInsertMode)
 ```
 
-"ChainInsertMode controls whether Felix hooks the kernel's top-level iptables chains by inserting a rule at the top of the chain or by appending a rule at the bottom. insert is the safe default since it prevents Calico's rules from being bypassed. If you switch to append mode, be sure that the other rules in the chains signal acceptance by falling through to the Calico rules, otherwise the Calico policy will be bypassed. [Default: insert]"
+"ChainInsertMode controls whether Felix hooks the kernel’s top-level iptables chains by inserting a rule at the top of the chain or by appending a rule at the bottom. insert is the safe default since it prevents Calico’s rules from being bypassed. If you switch to append mode, be sure that the other rules in the chains signal acceptance by falling through to the Calico rules, otherwise the Calico policy will be bypassed. [Default: insert]"
 
 ### fn spec.withDataplaneDriver
 
@@ -541,7 +559,7 @@ withFailsafeInboundHostPortsMixin(failsafeInboundHostPorts)
 withFailsafeOutboundHostPorts(failsafeOutboundHostPorts)
 ```
 
-"FailsafeOutboundHostPorts is a comma-delimited list of UDP/TCP ports that Felix will allow outgoing traffic from host endpoints to irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. Each port should be specified as tcp:<port-number> or udp:<port-number>. For back-compatibility, if the protocol is not specified, it defaults to “tcp”. To disable all outbound host ports, use the value none. The default value opens etcd's standard ports to ensure that Felix does not get cut off from etcd as well as allowing DHCP and DNS. [Default: tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667, udp:53, udp:67]"
+"FailsafeOutboundHostPorts is a comma-delimited list of UDP/TCP ports that Felix will allow outgoing traffic from host endpoints to irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. Each port should be specified as tcp:<port-number> or udp:<port-number>. For back-compatibility, if the protocol is not specified, it defaults to “tcp”. To disable all outbound host ports, use the value none. The default value opens etcd’s standard ports to ensure that Felix does not get cut off from etcd as well as allowing DHCP and DNS. [Default: tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667, udp:53, udp:67]"
 
 ### fn spec.withFailsafeOutboundHostPortsMixin
 
@@ -549,7 +567,7 @@ withFailsafeOutboundHostPorts(failsafeOutboundHostPorts)
 withFailsafeOutboundHostPortsMixin(failsafeOutboundHostPorts)
 ```
 
-"FailsafeOutboundHostPorts is a comma-delimited list of UDP/TCP ports that Felix will allow outgoing traffic from host endpoints to irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. Each port should be specified as tcp:<port-number> or udp:<port-number>. For back-compatibility, if the protocol is not specified, it defaults to “tcp”. To disable all outbound host ports, use the value none. The default value opens etcd's standard ports to ensure that Felix does not get cut off from etcd as well as allowing DHCP and DNS. [Default: tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667, udp:53, udp:67]"
+"FailsafeOutboundHostPorts is a comma-delimited list of UDP/TCP ports that Felix will allow outgoing traffic from host endpoints to irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. Each port should be specified as tcp:<port-number> or udp:<port-number>. For back-compatibility, if the protocol is not specified, it defaults to “tcp”. To disable all outbound host ports, use the value none. The default value opens etcd’s standard ports to ensure that Felix does not get cut off from etcd as well as allowing DHCP and DNS. [Default: tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667, udp:53, udp:67]"
 
 **Note:** This function appends passed data to existing values
 
@@ -607,7 +625,7 @@ withInterfaceExclude(interfaceExclude)
 withInterfacePrefix(interfacePrefix)
 ```
 
-"InterfacePrefix is the interface name prefix that identifies workload endpoints and so distinguishes them from host endpoint interfaces. Note: in environments other than bare metal, the orchestrators configure this appropriately. For example our Kubernetes and Docker integrations set the 'cali' value, and our OpenStack integration sets the 'tap' value. [Default: cali]"
+"InterfacePrefix is the interface name prefix that identifies workload endpoints and so distinguishes them from host endpoint interfaces. Note: in environments other than bare metal, the orchestrators configure this appropriately. For example our Kubernetes and Docker integrations set the ‘cali’ value, and our OpenStack integration sets the ‘tap’ value. [Default: cali]"
 
 ### fn spec.withInterfaceRefreshInterval
 
@@ -639,7 +657,7 @@ withIpipMTU(ipipMTU)
 withIpsetsRefreshInterval(ipsetsRefreshInterval)
 ```
 
-"IpsetsRefreshInterval is the period at which Felix re-checks all iptables state to ensure that no other process has accidentally broken Calico's rules. Set to 0 to disable iptables refresh. [Default: 90s]"
+"IpsetsRefreshInterval is the period at which Felix re-checks all iptables state to ensure that no other process has accidentally broken Calico’s rules. Set to 0 to disable iptables refresh. [Default: 90s]"
 
 ### fn spec.withIptablesBackend
 
@@ -663,7 +681,7 @@ withIptablesFilterAllowAction(iptablesFilterAllowAction)
 withIptablesLockFilePath(iptablesLockFilePath)
 ```
 
-"IptablesLockFilePath is the location of the iptables lock file. You may need to change this if the lock file is not in its standard location (for example if you have mapped it into Felix's container at a different path). [Default: /run/xtables.lock]"
+"IptablesLockFilePath is the location of the iptables lock file. You may need to change this if the lock file is not in its standard location (for example if you have mapped it into Felix’s container at a different path). [Default: /run/xtables.lock]"
 
 ### fn spec.withIptablesLockProbeInterval
 
@@ -711,7 +729,7 @@ withIptablesNATOutgoingInterfaceFilter(iptablesNATOutgoingInterfaceFilter)
 withIptablesPostWriteCheckInterval(iptablesPostWriteCheckInterval)
 ```
 
-"IptablesPostWriteCheckInterval is the period after Felix has done a write to the dataplane that it schedules an extra read back in order to check the write was not clobbered by another process. This should only occur if another application on the system doesn't respect the iptables lock. [Default: 1s]"
+"IptablesPostWriteCheckInterval is the period after Felix has done a write to the dataplane that it schedules an extra read back in order to check the write was not clobbered by another process. This should only occur if another application on the system doesn’t respect the iptables lock. [Default: 1s]"
 
 ### fn spec.withIptablesRefreshInterval
 
@@ -719,7 +737,7 @@ withIptablesPostWriteCheckInterval(iptablesPostWriteCheckInterval)
 withIptablesRefreshInterval(iptablesRefreshInterval)
 ```
 
-"IptablesRefreshInterval is the period at which Felix re-checks the IP sets in the dataplane to ensure that no other process has accidentally broken Calico's rules. Set to 0 to disable IP sets refresh. Note: the default for this value is lower than the other refresh intervals as a workaround for a Linux kernel bug that was fixed in kernel version 4.11. If you are using v4.11 or greater you may want to set this to, a higher value to reduce Felix CPU usage. [Default: 10s]"
+"IptablesRefreshInterval is the period at which Felix re-checks the IP sets in the dataplane to ensure that no other process has accidentally broken Calico’s rules. Set to 0 to disable IP sets refresh. Note: the default for this value is lower than the other refresh intervals as a workaround for a Linux kernel bug that was fixed in kernel version 4.11. If you are using v4.11 or greater you may want to set this to, a higher value to reduce Felix CPU usage. [Default: 10s]"
 
 ### fn spec.withIpv6Support
 
@@ -809,7 +827,7 @@ withMetadataAddr(metadataAddr)
 withMetadataPort(metadataPort)
 ```
 
-"MetadataPort is the port of the metadata server. This, combined with global.MetadataAddr (if not 'None'), is used to set up a NAT rule, from 169.254.169.254:80 to MetadataAddr:MetadataPort. In most cases this should not need to be changed [Default: 8775]."
+"MetadataPort is the port of the metadata server. This, combined with global.MetadataAddr (if not ‘None’), is used to set up a NAT rule, from 169.254.169.254:80 to MetadataAddr:MetadataPort. In most cases this should not need to be changed [Default: 8775]."
 
 ### fn spec.withNatOutgoingAddress
 
@@ -921,7 +939,7 @@ withReportingTTL(reportingTTL)
 withRouteRefreshInterval(routeRefreshInterval)
 ```
 
-"RouteRefreshInterval is the period at which Felix re-checks the routes in the dataplane to ensure that no other process has accidentally broken Calico's rules. Set to 0 to disable route refresh. [Default: 90s]"
+"RouterefreshInterval is the period at which Felix re-checks the routes in the dataplane to ensure that no other process has accidentally broken Calico’s rules. Set to 0 to disable route refresh. [Default: 90s]"
 
 ### fn spec.withRouteSource
 

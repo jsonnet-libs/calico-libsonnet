@@ -1,8 +1,8 @@
 ---
-permalink: /3.16/crd/v1/bgpPeer/
+permalink: /3.22/crd/v1/hostEndpoint/
 ---
 
-# crd.v1.bgpPeer
+# crd.v1.hostEndpoint
 
 
 
@@ -32,17 +32,14 @@ permalink: /3.16/crd/v1/bgpPeer/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAsNumber(asNumber)`](#fn-specwithasnumber)
-  * [`fn withKeepOriginalNextHop(keepOriginalNextHop)`](#fn-specwithkeeporiginalnexthop)
+  * [`fn withExpectedIPs(expectedIPs)`](#fn-specwithexpectedips)
+  * [`fn withExpectedIPsMixin(expectedIPs)`](#fn-specwithexpectedipsmixin)
+  * [`fn withInterfaceName(interfaceName)`](#fn-specwithinterfacename)
   * [`fn withNode(node)`](#fn-specwithnode)
-  * [`fn withNodeSelector(nodeSelector)`](#fn-specwithnodeselector)
-  * [`fn withPeerIP(peerIP)`](#fn-specwithpeerip)
-  * [`fn withPeerSelector(peerSelector)`](#fn-specwithpeerselector)
-  * [`obj spec.password`](#obj-specpassword)
-    * [`obj spec.password.secretKeyRef`](#obj-specpasswordsecretkeyref)
-      * [`fn withKey(key)`](#fn-specpasswordsecretkeyrefwithkey)
-      * [`fn withName(name)`](#fn-specpasswordsecretkeyrefwithname)
-      * [`fn withOptional(optional)`](#fn-specpasswordsecretkeyrefwithoptional)
+  * [`fn withPorts(ports)`](#fn-specwithports)
+  * [`fn withPortsMixin(ports)`](#fn-specwithportsmixin)
+  * [`fn withProfiles(profiles)`](#fn-specwithprofiles)
+  * [`fn withProfilesMixin(profiles)`](#fn-specwithprofilesmixin)
 
 ## Fields
 
@@ -52,7 +49,7 @@ permalink: /3.16/crd/v1/bgpPeer/
 new(name)
 ```
 
-new returns an instance of BGPPeer
+new returns an instance of HostEndpoint
 
 ## obj metadata
 
@@ -238,23 +235,33 @@ withUid(uid)
 
 ## obj spec
 
-"BGPPeerSpec contains the specification for a BGPPeer resource."
+"HostEndpointSpec contains the specification for a HostEndpoint resource."
 
-### fn spec.withAsNumber
-
-```ts
-withAsNumber(asNumber)
-```
-
-"The AS Number of the peer."
-
-### fn spec.withKeepOriginalNextHop
+### fn spec.withExpectedIPs
 
 ```ts
-withKeepOriginalNextHop(keepOriginalNextHop)
+withExpectedIPs(expectedIPs)
 ```
 
-"Option to keep the original nexthop field when routes are sent to a BGP Peer. Setting \"true\" configures the selected BGP Peers node to use the \"next hop keep;\" instead of \"next hop self;\"(default) in the specific branch of the Node on \"bird.cfg\"."
+"The expected IP addresses (IPv4 and IPv6) of the endpoint. If \"InterfaceName\" is not present, Calico will look for an interface matching any of the IPs in the list and apply policy to that. Note: \tWhen using the selector match criteria in an ingress or egress security Policy \tor Profile, Calico converts the selector into a set of IP addresses. For host \tendpoints, the ExpectedIPs field is used for that purpose. (If only the interface \tname is specified, Calico does not learn the IPs of the interface for use in match \tcriteria.)"
+
+### fn spec.withExpectedIPsMixin
+
+```ts
+withExpectedIPsMixin(expectedIPs)
+```
+
+"The expected IP addresses (IPv4 and IPv6) of the endpoint. If \"InterfaceName\" is not present, Calico will look for an interface matching any of the IPs in the list and apply policy to that. Note: \tWhen using the selector match criteria in an ingress or egress security Policy \tor Profile, Calico converts the selector into a set of IP addresses. For host \tendpoints, the ExpectedIPs field is used for that purpose. (If only the interface \tname is specified, Calico does not learn the IPs of the interface for use in match \tcriteria.)"
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withInterfaceName
+
+```ts
+withInterfaceName(interfaceName)
+```
+
+"Either \"*\", or the name of a specific Linux interface to apply policy to; or empty.  \"*\" indicates that this HostEndpoint governs all traffic to, from or through the default network namespace of the host named by the \"Node\" field; entering and leaving that namespace via any interface, including those from/to non-host-networked local workloads. \n If InterfaceName is not \"*\", this HostEndpoint only governs traffic that enters or leaves the host through the specific interface named by InterfaceName, or - when InterfaceName is empty - through the specific interface that has one of the IPs in ExpectedIPs. Therefore, when InterfaceName is empty, at least one expected IP must be specified.  Only external interfaces (such as \"eth0\") are supported here; it isn't possible for a HostEndpoint to protect traffic through a specific local workload interface. \n Note: Only some kinds of policy are implemented for \"*\" HostEndpoints; initially just pre-DNAT policy.  Please check Calico documentation for the latest position."
 
 ### fn spec.withNode
 
@@ -262,60 +269,40 @@ withKeepOriginalNextHop(keepOriginalNextHop)
 withNode(node)
 ```
 
-"The node name identifying the Calico node instance that is peering with this peer. If this is not set, this represents a global peer, i.e. a peer that peers with every node in the deployment."
+"The node name identifying the Calico node instance."
 
-### fn spec.withNodeSelector
-
-```ts
-withNodeSelector(nodeSelector)
-```
-
-"Selector for the nodes that should have this peering.  When this is set, the Node field must be empty."
-
-### fn spec.withPeerIP
+### fn spec.withPorts
 
 ```ts
-withPeerIP(peerIP)
+withPorts(ports)
 ```
 
-"The IP address of the peer followed by an optional port number to peer with. If port number is given, format should be `[<IPv6>]:port` or `<IPv4>:<port>` for IPv4. If optional port number is not set, and this peer IP and ASNumber belongs to a calico/node with ListenPort set in BGPConfiguration, then we use that port to peer."
+"Ports contains the endpoint's named ports, which may be referenced in security policy rules."
 
-### fn spec.withPeerSelector
+### fn spec.withPortsMixin
 
 ```ts
-withPeerSelector(peerSelector)
+withPortsMixin(ports)
 ```
 
-"Selector for the remote nodes to peer with.  When this is set, the PeerIP and ASNumber fields must be empty.  For each peering between the local node and selected remote nodes, we configure an IPv4 peering if both ends have NodeBGPSpec.IPv4Address specified, and an IPv6 peering if both ends have NodeBGPSpec.IPv6Address specified.  The remote AS number comes from the remote node’s NodeBGPSpec.ASNumber, or the global default if that is not set."
+"Ports contains the endpoint's named ports, which may be referenced in security policy rules."
 
-## obj spec.password
+**Note:** This function appends passed data to existing values
 
-"Optional BGP password for the peerings generated by this BGPPeer resource."
-
-## obj spec.password.secretKeyRef
-
-"Selects a key of a secret in the node pod's namespace."
-
-### fn spec.password.secretKeyRef.withKey
+### fn spec.withProfiles
 
 ```ts
-withKey(key)
+withProfiles(profiles)
 ```
 
-"The key of the secret to select from.  Must be a valid secret key."
+"A list of identifiers of security Profile objects that apply to this endpoint. Each profile is applied in the order that they appear in this list.  Profile rules are applied after the selector-based security policy."
 
-### fn spec.password.secretKeyRef.withName
+### fn spec.withProfilesMixin
 
 ```ts
-withName(name)
+withProfilesMixin(profiles)
 ```
 
-"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+"A list of identifiers of security Profile objects that apply to this endpoint. Each profile is applied in the order that they appear in this list.  Profile rules are applied after the selector-based security policy."
 
-### fn spec.password.secretKeyRef.withOptional
-
-```ts
-withOptional(optional)
-```
-
-"Specify whether the Secret or its key must be defined"
+**Note:** This function appends passed data to existing values

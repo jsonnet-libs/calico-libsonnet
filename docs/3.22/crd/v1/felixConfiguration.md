@@ -1,5 +1,5 @@
 ---
-permalink: /3.20/crd/v1/felixConfiguration/
+permalink: /3.22/crd/v1/felixConfiguration/
 ---
 
 # crd.v1.felixConfiguration
@@ -45,6 +45,7 @@ permalink: /3.20/crd/v1/felixConfiguration/
   * [`fn withBpfKubeProxyIptablesCleanupEnabled(bpfKubeProxyIptablesCleanupEnabled)`](#fn-specwithbpfkubeproxyiptablescleanupenabled)
   * [`fn withBpfKubeProxyMinSyncPeriod(bpfKubeProxyMinSyncPeriod)`](#fn-specwithbpfkubeproxyminsyncperiod)
   * [`fn withBpfLogLevel(bpfLogLevel)`](#fn-specwithbpfloglevel)
+  * [`fn withBpfPSNATPorts(bpfPSNATPorts)`](#fn-specwithbpfpsnatports)
   * [`fn withChainInsertMode(chainInsertMode)`](#fn-specwithchaininsertmode)
   * [`fn withDataplaneDriver(dataplaneDriver)`](#fn-specwithdataplanedriver)
   * [`fn withDebugDisableLogDropping(debugDisableLogDropping)`](#fn-specwithdebugdisablelogdropping)
@@ -87,6 +88,7 @@ permalink: /3.20/crd/v1/felixConfiguration/
   * [`fn withIpv6Support(ipv6Support)`](#fn-specwithipv6support)
   * [`fn withKubeNodePortRanges(kubeNodePortRanges)`](#fn-specwithkubenodeportranges)
   * [`fn withKubeNodePortRangesMixin(kubeNodePortRanges)`](#fn-specwithkubenodeportrangesmixin)
+  * [`fn withLogDebugFilenameRegex(logDebugFilenameRegex)`](#fn-specwithlogdebugfilenameregex)
   * [`fn withLogFilePath(logFilePath)`](#fn-specwithlogfilepath)
   * [`fn withLogPrefix(logPrefix)`](#fn-specwithlogprefix)
   * [`fn withLogSeverityFile(logSeverityFile)`](#fn-specwithlogseverityfile)
@@ -352,7 +354,7 @@ withAllowVXLANPacketsFromWorkloads(allowVXLANPacketsFromWorkloads)
 withAwsSrcDstCheck(awsSrcDstCheck)
 ```
 
-"Set source-destination-check on AWS EC2 instances. Accepted value must be one of \"DoNothing\", \"Enabled\" or \"Disabled\". [Default: DoNothing]"
+"Set source-destination-check on AWS EC2 instances. Accepted value must be one of \"DoNothing\", \"Enable\" or \"Disable\". [Default: DoNothing]"
 
 ### fn spec.withBpfConnectTimeLoadBalancingEnabled
 
@@ -392,7 +394,7 @@ withBpfEnabled(bpfEnabled)
 withBpfExtToServiceConnmark(bpfExtToServiceConnmark)
 ```
 
-"BPFExtToServiceConnmark in BPF mode, controls a 32bit mark that is set on connections from an external client to a local service. This mark allows us to control how packets of that connection are routed within the host and how is routing intepreted by RPF check. [Default: 0]"
+"BPFExtToServiceConnmark in BPF mode, control a 32bit mark that is set on connections from an external client to a local service. This mark allows us to control how packets of that connection are routed within the host and how is routing intepreted by RPF check. [Default: 0]"
 
 ### fn spec.withBpfExternalServiceMode
 
@@ -433,6 +435,14 @@ withBpfLogLevel(bpfLogLevel)
 ```
 
 "BPFLogLevel controls the log level of the BPF programs when in BPF dataplane mode.  One of \"Off\", \"Info\", or \"Debug\".  The logs are emitted to the BPF trace pipe, accessible with the command `tc exec bpf debug`. [Default: Off]."
+
+### fn spec.withBpfPSNATPorts
+
+```ts
+withBpfPSNATPorts(bpfPSNATPorts)
+```
+
+"BPFPSNATPorts sets the range from which we randomly pick a port if there is a source port collision. This should be within the ephemeral range as defined by RFC 6056 (1024–65535) and preferably outside the  ephemeral ranges used by common operating systems. Linux uses 32768–60999, while others mostly use the IANA defined range 49152–65535. It is not necessarily a problem if this range overlaps with the operating systems. Both ends of the range are inclusive. [Default: 20000:29999]"
 
 ### fn spec.withChainInsertMode
 
@@ -777,6 +787,14 @@ withKubeNodePortRangesMixin(kubeNodePortRanges)
 "KubeNodePortRanges holds list of port ranges used for service node ports. Only used if felix detects kube-proxy running in ipvs mode. Felix uses these ranges to separate host and workload traffic. [Default: 30000:32767]."
 
 **Note:** This function appends passed data to existing values
+
+### fn spec.withLogDebugFilenameRegex
+
+```ts
+withLogDebugFilenameRegex(logDebugFilenameRegex)
+```
+
+"LogDebugFilenameRegex controls which source code files have their Debug log output included in the logs. Only logs from files with names that match the given regular expression are included.  The filter only applies to Debug level logs."
 
 ### fn spec.withLogFilePath
 

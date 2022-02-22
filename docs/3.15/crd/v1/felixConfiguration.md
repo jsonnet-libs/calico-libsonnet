@@ -32,6 +32,8 @@ permalink: /3.15/crd/v1/felixConfiguration/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
+  * [`fn withAllowIPIPPacketsFromWorkloads(allowIPIPPacketsFromWorkloads)`](#fn-specwithallowipippacketsfromworkloads)
+  * [`fn withAllowVXLANPacketsFromWorkloads(allowVXLANPacketsFromWorkloads)`](#fn-specwithallowvxlanpacketsfromworkloads)
   * [`fn withBpfConnectTimeLoadBalancingEnabled(bpfConnectTimeLoadBalancingEnabled)`](#fn-specwithbpfconnecttimeloadbalancingenabled)
   * [`fn withBpfDataIfacePattern(bpfDataIfacePattern)`](#fn-specwithbpfdataifacepattern)
   * [`fn withBpfDisableUnprivileged(bpfDisableUnprivileged)`](#fn-specwithbpfdisableunprivileged)
@@ -319,6 +321,22 @@ withUid(uid)
 ## obj spec
 
 "FelixConfigurationSpec contains the values of the Felix configuration."
+
+### fn spec.withAllowIPIPPacketsFromWorkloads
+
+```ts
+withAllowIPIPPacketsFromWorkloads(allowIPIPPacketsFromWorkloads)
+```
+
+"AllowIPIPPacketsFromWorkloads controls whether Felix will add a rule to drop IPIP encapsulated traffic from workloads [Default: false]"
+
+### fn spec.withAllowVXLANPacketsFromWorkloads
+
+```ts
+withAllowVXLANPacketsFromWorkloads(allowVXLANPacketsFromWorkloads)
+```
+
+"AllowVXLANPacketsFromWorkloads controls whether Felix will add a rule to drop VXLAN encapsulated traffic from workloads [Default: false]"
 
 ### fn spec.withBpfConnectTimeLoadBalancingEnabled
 

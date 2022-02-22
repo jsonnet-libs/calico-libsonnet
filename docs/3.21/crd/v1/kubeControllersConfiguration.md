@@ -1,8 +1,8 @@
 ---
-permalink: /3.16/crd/v1/bgpPeer/
+permalink: /3.21/crd/v1/kubeControllersConfiguration/
 ---
 
-# crd.v1.bgpPeer
+# crd.v1.kubeControllersConfiguration
 
 
 
@@ -32,17 +32,25 @@ permalink: /3.16/crd/v1/bgpPeer/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAsNumber(asNumber)`](#fn-specwithasnumber)
-  * [`fn withKeepOriginalNextHop(keepOriginalNextHop)`](#fn-specwithkeeporiginalnexthop)
-  * [`fn withNode(node)`](#fn-specwithnode)
-  * [`fn withNodeSelector(nodeSelector)`](#fn-specwithnodeselector)
-  * [`fn withPeerIP(peerIP)`](#fn-specwithpeerip)
-  * [`fn withPeerSelector(peerSelector)`](#fn-specwithpeerselector)
-  * [`obj spec.password`](#obj-specpassword)
-    * [`obj spec.password.secretKeyRef`](#obj-specpasswordsecretkeyref)
-      * [`fn withKey(key)`](#fn-specpasswordsecretkeyrefwithkey)
-      * [`fn withName(name)`](#fn-specpasswordsecretkeyrefwithname)
-      * [`fn withOptional(optional)`](#fn-specpasswordsecretkeyrefwithoptional)
+  * [`fn withEtcdV3CompactionPeriod(etcdV3CompactionPeriod)`](#fn-specwithetcdv3compactionperiod)
+  * [`fn withHealthChecks(healthChecks)`](#fn-specwithhealthchecks)
+  * [`fn withLogSeverityScreen(logSeverityScreen)`](#fn-specwithlogseverityscreen)
+  * [`fn withPrometheusMetricsPort(prometheusMetricsPort)`](#fn-specwithprometheusmetricsport)
+  * [`obj spec.controllers`](#obj-speccontrollers)
+    * [`obj spec.controllers.namespace`](#obj-speccontrollersnamespace)
+      * [`fn withReconcilerPeriod(reconcilerPeriod)`](#fn-speccontrollersnamespacewithreconcilerperiod)
+    * [`obj spec.controllers.node`](#obj-speccontrollersnode)
+      * [`fn withLeakGracePeriod(leakGracePeriod)`](#fn-speccontrollersnodewithleakgraceperiod)
+      * [`fn withReconcilerPeriod(reconcilerPeriod)`](#fn-speccontrollersnodewithreconcilerperiod)
+      * [`fn withSyncLabels(syncLabels)`](#fn-speccontrollersnodewithsynclabels)
+      * [`obj spec.controllers.node.hostEndpoint`](#obj-speccontrollersnodehostendpoint)
+        * [`fn withAutoCreate(autoCreate)`](#fn-speccontrollersnodehostendpointwithautocreate)
+    * [`obj spec.controllers.policy`](#obj-speccontrollerspolicy)
+      * [`fn withReconcilerPeriod(reconcilerPeriod)`](#fn-speccontrollerspolicywithreconcilerperiod)
+    * [`obj spec.controllers.serviceAccount`](#obj-speccontrollersserviceaccount)
+      * [`fn withReconcilerPeriod(reconcilerPeriod)`](#fn-speccontrollersserviceaccountwithreconcilerperiod)
+    * [`obj spec.controllers.workloadEndpoint`](#obj-speccontrollersworkloadendpoint)
+      * [`fn withReconcilerPeriod(reconcilerPeriod)`](#fn-speccontrollersworkloadendpointwithreconcilerperiod)
 
 ## Fields
 
@@ -52,7 +60,7 @@ permalink: /3.16/crd/v1/bgpPeer/
 new(name)
 ```
 
-new returns an instance of BGPPeer
+new returns an instance of KubeControllersConfiguration
 
 ## obj metadata
 
@@ -238,84 +246,128 @@ withUid(uid)
 
 ## obj spec
 
-"BGPPeerSpec contains the specification for a BGPPeer resource."
+"KubeControllersConfigurationSpec contains the values of the Kubernetes controllers configuration."
 
-### fn spec.withAsNumber
-
-```ts
-withAsNumber(asNumber)
-```
-
-"The AS Number of the peer."
-
-### fn spec.withKeepOriginalNextHop
+### fn spec.withEtcdV3CompactionPeriod
 
 ```ts
-withKeepOriginalNextHop(keepOriginalNextHop)
+withEtcdV3CompactionPeriod(etcdV3CompactionPeriod)
 ```
 
-"Option to keep the original nexthop field when routes are sent to a BGP Peer. Setting \"true\" configures the selected BGP Peers node to use the \"next hop keep;\" instead of \"next hop self;\"(default) in the specific branch of the Node on \"bird.cfg\"."
+"EtcdV3CompactionPeriod is the period between etcdv3 compaction requests. Set to 0 to disable. [Default: 10m]"
 
-### fn spec.withNode
+### fn spec.withHealthChecks
 
 ```ts
-withNode(node)
+withHealthChecks(healthChecks)
 ```
 
-"The node name identifying the Calico node instance that is peering with this peer. If this is not set, this represents a global peer, i.e. a peer that peers with every node in the deployment."
+"HealthChecks enables or disables support for health checks [Default: Enabled]"
 
-### fn spec.withNodeSelector
+### fn spec.withLogSeverityScreen
 
 ```ts
-withNodeSelector(nodeSelector)
+withLogSeverityScreen(logSeverityScreen)
 ```
 
-"Selector for the nodes that should have this peering.  When this is set, the Node field must be empty."
+"LogSeverityScreen is the log severity above which logs are sent to the stdout. [Default: Info]"
 
-### fn spec.withPeerIP
+### fn spec.withPrometheusMetricsPort
 
 ```ts
-withPeerIP(peerIP)
+withPrometheusMetricsPort(prometheusMetricsPort)
 ```
 
-"The IP address of the peer followed by an optional port number to peer with. If port number is given, format should be `[<IPv6>]:port` or `<IPv4>:<port>` for IPv4. If optional port number is not set, and this peer IP and ASNumber belongs to a calico/node with ListenPort set in BGPConfiguration, then we use that port to peer."
+"PrometheusMetricsPort is the TCP port that the Prometheus metrics server should bind to. Set to 0 to disable. [Default: 9094]"
 
-### fn spec.withPeerSelector
+## obj spec.controllers
+
+"Controllers enables and configures individual Kubernetes controllers"
+
+## obj spec.controllers.namespace
+
+"Namespace enables and configures the namespace controller. Enabled by default, set to nil to disable."
+
+### fn spec.controllers.namespace.withReconcilerPeriod
 
 ```ts
-withPeerSelector(peerSelector)
+withReconcilerPeriod(reconcilerPeriod)
 ```
 
-"Selector for the remote nodes to peer with.  When this is set, the PeerIP and ASNumber fields must be empty.  For each peering between the local node and selected remote nodes, we configure an IPv4 peering if both ends have NodeBGPSpec.IPv4Address specified, and an IPv6 peering if both ends have NodeBGPSpec.IPv6Address specified.  The remote AS number comes from the remote node’s NodeBGPSpec.ASNumber, or the global default if that is not set."
+"ReconcilerPeriod is the period to perform reconciliation with the Calico datastore. [Default: 5m]"
 
-## obj spec.password
+## obj spec.controllers.node
 
-"Optional BGP password for the peerings generated by this BGPPeer resource."
+"Node enables and configures the node controller. Enabled by default, set to nil to disable."
 
-## obj spec.password.secretKeyRef
-
-"Selects a key of a secret in the node pod's namespace."
-
-### fn spec.password.secretKeyRef.withKey
+### fn spec.controllers.node.withLeakGracePeriod
 
 ```ts
-withKey(key)
+withLeakGracePeriod(leakGracePeriod)
 ```
 
-"The key of the secret to select from.  Must be a valid secret key."
+"LeakGracePeriod is the period used by the controller to determine if an IP address has been leaked. Set to 0 to disable IP garbage collection. [Default: 15m]"
 
-### fn spec.password.secretKeyRef.withName
+### fn spec.controllers.node.withReconcilerPeriod
 
 ```ts
-withName(name)
+withReconcilerPeriod(reconcilerPeriod)
 ```
 
-"Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?"
+"ReconcilerPeriod is the period to perform reconciliation with the Calico datastore. [Default: 5m]"
 
-### fn spec.password.secretKeyRef.withOptional
+### fn spec.controllers.node.withSyncLabels
 
 ```ts
-withOptional(optional)
+withSyncLabels(syncLabels)
 ```
 
-"Specify whether the Secret or its key must be defined"
+"SyncLabels controls whether to copy Kubernetes node labels to Calico nodes. [Default: Enabled]"
+
+## obj spec.controllers.node.hostEndpoint
+
+"HostEndpoint controls syncing nodes to host endpoints. Disabled by default, set to nil to disable."
+
+### fn spec.controllers.node.hostEndpoint.withAutoCreate
+
+```ts
+withAutoCreate(autoCreate)
+```
+
+"AutoCreate enables automatic creation of host endpoints for every node. [Default: Disabled]"
+
+## obj spec.controllers.policy
+
+"Policy enables and configures the policy controller. Enabled by default, set to nil to disable."
+
+### fn spec.controllers.policy.withReconcilerPeriod
+
+```ts
+withReconcilerPeriod(reconcilerPeriod)
+```
+
+"ReconcilerPeriod is the period to perform reconciliation with the Calico datastore. [Default: 5m]"
+
+## obj spec.controllers.serviceAccount
+
+"ServiceAccount enables and configures the service account controller. Enabled by default, set to nil to disable."
+
+### fn spec.controllers.serviceAccount.withReconcilerPeriod
+
+```ts
+withReconcilerPeriod(reconcilerPeriod)
+```
+
+"ReconcilerPeriod is the period to perform reconciliation with the Calico datastore. [Default: 5m]"
+
+## obj spec.controllers.workloadEndpoint
+
+"WorkloadEndpoint enables and configures the workload endpoint controller. Enabled by default, set to nil to disable."
+
+### fn spec.controllers.workloadEndpoint.withReconcilerPeriod
+
+```ts
+withReconcilerPeriod(reconcilerPeriod)
+```
+
+"ReconcilerPeriod is the period to perform reconciliation with the Calico datastore. [Default: 5m]"
