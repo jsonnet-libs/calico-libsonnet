@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'GlobalNetworkPolicy',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help=''),
   spec: {
     '#withApplyOnForward':: d.fn(help='"ApplyOnForward indicates to apply the rules in this policy on forward traffic."', args=[d.arg(name='applyOnForward', type=d.T.boolean)]),

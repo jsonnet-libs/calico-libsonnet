@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'BGPConfiguration',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"BGPConfigurationSpec contains the values of the BGP configuration."'),
   spec: {
     '#withAsNumber':: d.fn(help='"ASNumber is the default AS number used by a node. [Default: 64512]"', args=[d.arg(name='asNumber', type=d.T.integer)]),

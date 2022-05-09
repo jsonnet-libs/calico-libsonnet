@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'IPAMBlock',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"IPAMBlockSpec contains the specification for an IPAMBlock resource."'),
   spec: {
     '#withAffinity':: d.fn(help='', args=[d.arg(name='affinity', type=d.T.string)]),

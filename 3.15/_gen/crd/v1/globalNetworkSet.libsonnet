@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'GlobalNetworkSet',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"GlobalNetworkSetSpec contains the specification for a NetworkSet resource."'),
   spec: {
     '#withNets':: d.fn(help='"The list of IP networks that belong to this set."', args=[d.arg(name='nets', type=d.T.array)]),

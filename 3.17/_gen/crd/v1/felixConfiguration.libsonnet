@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'FelixConfiguration',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"FelixConfigurationSpec contains the values of the Felix configuration."'),
   spec: {
     '#routeTableRange':: d.obj(help='"Calico programs additional Linux route tables for various purposes.  RouteTableRange specifies the indices of the route tables that Calico should use."'),

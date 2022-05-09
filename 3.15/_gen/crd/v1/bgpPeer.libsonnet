@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'BGPPeer',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"BGPPeerSpec contains the specification for a BGPPeer resource."'),
   spec: {
     '#withAsNumber':: d.fn(help='"The AS Number of the peer."', args=[d.arg(name='asNumber', type=d.T.integer)]),

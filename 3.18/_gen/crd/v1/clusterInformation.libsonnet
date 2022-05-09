@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'ClusterInformation',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"ClusterInformationSpec contains the values of describing the cluster."'),
   spec: {
     '#withCalicoVersion':: d.fn(help='"CalicoVersion is the version of Calico that the cluster is running"', args=[d.arg(name='calicoVersion', type=d.T.string)]),

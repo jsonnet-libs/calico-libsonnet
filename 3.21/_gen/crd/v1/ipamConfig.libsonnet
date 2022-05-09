@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'IPAMConfig',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"IPAMConfigSpec contains the specification for an IPAMConfig resource."'),
   spec: {
     '#withAutoAllocateBlocks':: d.fn(help='', args=[d.arg(name='autoAllocateBlocks', type=d.T.boolean)]),

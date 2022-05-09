@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'KubeControllersConfiguration',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"KubeControllersConfigurationSpec contains the values of the Kubernetes controllers configuration."'),
   spec: {
     '#controllers':: d.obj(help='"Controllers enables and configures individual Kubernetes controllers"'),

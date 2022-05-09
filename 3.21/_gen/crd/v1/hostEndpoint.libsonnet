@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'HostEndpoint',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"HostEndpointSpec contains the specification for a HostEndpoint resource."'),
   spec: {
     '#withExpectedIPs':: d.fn(help='"The expected IP addresses (IPv4 and IPv6) of the endpoint. If \\"InterfaceName\\" is not present, Calico will look for an interface matching any of the IPs in the list and apply policy to that. Note: \\tWhen using the selector match criteria in an ingress or egress security Policy \\tor Profile, Calico converts the selector into a set of IP addresses. For host \\tendpoints, the ExpectedIPs field is used for that purpose. (If only the interface \\tname is specified, Calico does not learn the IPs of the interface for use in match \\tcriteria.)"', args=[d.arg(name='expectedIPs', type=d.T.array)]),

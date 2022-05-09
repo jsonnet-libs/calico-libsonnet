@@ -50,7 +50,9 @@
   new(name): {
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'BlockAffinity',
-  } + self.metadata.withName(name=name),
+  } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
+    'tanka.dev/namespaced': 'true',
+  }),
   '#spec':: d.obj(help='"BlockAffinitySpec contains the specification for a BlockAffinity resource."'),
   spec: {
     '#withCidr':: d.fn(help='', args=[d.arg(name='cidr', type=d.T.string)]),
