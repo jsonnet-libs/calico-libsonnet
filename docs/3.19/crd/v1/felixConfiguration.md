@@ -22,8 +22,6 @@ permalink: /3.19/crd/v1/felixConfiguration/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -128,6 +126,14 @@ permalink: /3.19/crd/v1/felixConfiguration/
   * [`fn withWireguardRoutingRulePriority(wireguardRoutingRulePriority)`](#fn-specwithwireguardroutingrulepriority)
   * [`fn withXdpEnabled(xdpEnabled)`](#fn-specwithxdpenabled)
   * [`fn withXdpRefreshInterval(xdpRefreshInterval)`](#fn-specwithxdprefreshinterval)
+  * [`obj spec.failsafeInboundHostPorts`](#obj-specfailsafeinboundhostports)
+    * [`fn withNet(net)`](#fn-specfailsafeinboundhostportswithnet)
+    * [`fn withPort(port)`](#fn-specfailsafeinboundhostportswithport)
+    * [`fn withProtocol(protocol)`](#fn-specfailsafeinboundhostportswithprotocol)
+  * [`obj spec.failsafeOutboundHostPorts`](#obj-specfailsafeoutboundhostports)
+    * [`fn withNet(net)`](#fn-specfailsafeoutboundhostportswithnet)
+    * [`fn withPort(port)`](#fn-specfailsafeoutboundhostportswithport)
+    * [`fn withProtocol(protocol)`](#fn-specfailsafeoutboundhostportswithprotocol)
   * [`obj spec.routeTableRange`](#obj-specroutetablerange)
     * [`fn withMax(max)`](#fn-specroutetablerangewithmax)
     * [`fn withMin(min)`](#fn-specroutetablerangewithmin)
@@ -245,24 +251,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -1103,6 +1091,62 @@ withXdpRefreshInterval(xdpRefreshInterval)
 ```
 
 "XDPRefreshInterval is the period at which Felix re-checks all XDP state to ensure that no other process has accidentally broken Calico's BPF maps or attached programs. Set to 0 to disable XDP refresh. [Default: 90s]"
+
+## obj spec.failsafeInboundHostPorts
+
+"FailsafeInboundHostPorts is a list of UDP/TCP ports and CIDRs that Felix will allow incoming traffic to host endpoints on irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. For back-compatibility, if the protocol is not specified, it defaults to \"tcp\". If a CIDR is not specified, it will allow traffic from all addresses. To disable all inbound host ports, use the value none. The default value allows ssh access and DHCP. [Default: tcp:22, udp:68, tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667]"
+
+### fn spec.failsafeInboundHostPorts.withNet
+
+```ts
+withNet(net)
+```
+
+
+
+### fn spec.failsafeInboundHostPorts.withPort
+
+```ts
+withPort(port)
+```
+
+
+
+### fn spec.failsafeInboundHostPorts.withProtocol
+
+```ts
+withProtocol(protocol)
+```
+
+
+
+## obj spec.failsafeOutboundHostPorts
+
+"FailsafeOutboundHostPorts is a list of UDP/TCP ports and CIDRs that Felix will allow outgoing traffic from host endpoints to irrespective of the security policy. This is useful to avoid accidentally cutting off a host with incorrect configuration. For back-compatibility, if the protocol is not specified, it defaults to \"tcp\". If a CIDR is not specified, it will allow traffic from all addresses. To disable all outbound host ports, use the value none. The default value opens etcd's standard ports to ensure that Felix does not get cut off from etcd as well as allowing DHCP and DNS. [Default: tcp:179, tcp:2379, tcp:2380, tcp:6443, tcp:6666, tcp:6667, udp:53, udp:67]"
+
+### fn spec.failsafeOutboundHostPorts.withNet
+
+```ts
+withNet(net)
+```
+
+
+
+### fn spec.failsafeOutboundHostPorts.withPort
+
+```ts
+withPort(port)
+```
+
+
+
+### fn spec.failsafeOutboundHostPorts.withProtocol
+
+```ts
+withProtocol(protocol)
+```
+
+
 
 ## obj spec.routeTableRange
 

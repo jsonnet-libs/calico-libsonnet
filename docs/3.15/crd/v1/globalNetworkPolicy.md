@@ -22,8 +22,6 @@ permalink: /3.15/crd/v1/globalNetworkPolicy/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -45,6 +43,114 @@ permalink: /3.15/crd/v1/globalNetworkPolicy/
   * [`fn withServiceAccountSelector(serviceAccountSelector)`](#fn-specwithserviceaccountselector)
   * [`fn withTypes(types)`](#fn-specwithtypes)
   * [`fn withTypesMixin(types)`](#fn-specwithtypesmixin)
+  * [`obj spec.egress`](#obj-specegress)
+    * [`fn withAction(action)`](#fn-specegresswithaction)
+    * [`fn withIpVersion(ipVersion)`](#fn-specegresswithipversion)
+    * [`fn withNotProtocol(notProtocol)`](#fn-specegresswithnotprotocol)
+    * [`fn withProtocol(protocol)`](#fn-specegresswithprotocol)
+    * [`obj spec.egress.destination`](#obj-specegressdestination)
+      * [`fn withNamespaceSelector(namespaceSelector)`](#fn-specegressdestinationwithnamespaceselector)
+      * [`fn withNets(nets)`](#fn-specegressdestinationwithnets)
+      * [`fn withNetsMixin(nets)`](#fn-specegressdestinationwithnetsmixin)
+      * [`fn withNotNets(notNets)`](#fn-specegressdestinationwithnotnets)
+      * [`fn withNotNetsMixin(notNets)`](#fn-specegressdestinationwithnotnetsmixin)
+      * [`fn withNotPorts(notPorts)`](#fn-specegressdestinationwithnotports)
+      * [`fn withNotPortsMixin(notPorts)`](#fn-specegressdestinationwithnotportsmixin)
+      * [`fn withNotSelector(notSelector)`](#fn-specegressdestinationwithnotselector)
+      * [`fn withPorts(ports)`](#fn-specegressdestinationwithports)
+      * [`fn withPortsMixin(ports)`](#fn-specegressdestinationwithportsmixin)
+      * [`fn withSelector(selector)`](#fn-specegressdestinationwithselector)
+      * [`obj spec.egress.destination.serviceAccounts`](#obj-specegressdestinationserviceaccounts)
+        * [`fn withNames(names)`](#fn-specegressdestinationserviceaccountswithnames)
+        * [`fn withNamesMixin(names)`](#fn-specegressdestinationserviceaccountswithnamesmixin)
+        * [`fn withSelector(selector)`](#fn-specegressdestinationserviceaccountswithselector)
+    * [`obj spec.egress.http`](#obj-specegresshttp)
+      * [`fn withMethods(methods)`](#fn-specegresshttpwithmethods)
+      * [`fn withMethodsMixin(methods)`](#fn-specegresshttpwithmethodsmixin)
+      * [`fn withPaths(paths)`](#fn-specegresshttpwithpaths)
+      * [`fn withPathsMixin(paths)`](#fn-specegresshttpwithpathsmixin)
+      * [`obj spec.egress.http.paths`](#obj-specegresshttppaths)
+        * [`fn withExact(exact)`](#fn-specegresshttppathswithexact)
+        * [`fn withPrefix(prefix)`](#fn-specegresshttppathswithprefix)
+    * [`obj spec.egress.icmp`](#obj-specegressicmp)
+      * [`fn withCode(code)`](#fn-specegressicmpwithcode)
+      * [`fn withType(type)`](#fn-specegressicmpwithtype)
+    * [`obj spec.egress.metadata`](#obj-specegressmetadata)
+      * [`fn withAnnotations(annotations)`](#fn-specegressmetadatawithannotations)
+      * [`fn withAnnotationsMixin(annotations)`](#fn-specegressmetadatawithannotationsmixin)
+    * [`obj spec.egress.notICMP`](#obj-specegressnoticmp)
+      * [`fn withCode(code)`](#fn-specegressnoticmpwithcode)
+      * [`fn withType(type)`](#fn-specegressnoticmpwithtype)
+    * [`obj spec.egress.source`](#obj-specegresssource)
+      * [`fn withNamespaceSelector(namespaceSelector)`](#fn-specegresssourcewithnamespaceselector)
+      * [`fn withNets(nets)`](#fn-specegresssourcewithnets)
+      * [`fn withNetsMixin(nets)`](#fn-specegresssourcewithnetsmixin)
+      * [`fn withNotNets(notNets)`](#fn-specegresssourcewithnotnets)
+      * [`fn withNotNetsMixin(notNets)`](#fn-specegresssourcewithnotnetsmixin)
+      * [`fn withNotPorts(notPorts)`](#fn-specegresssourcewithnotports)
+      * [`fn withNotPortsMixin(notPorts)`](#fn-specegresssourcewithnotportsmixin)
+      * [`fn withNotSelector(notSelector)`](#fn-specegresssourcewithnotselector)
+      * [`fn withPorts(ports)`](#fn-specegresssourcewithports)
+      * [`fn withPortsMixin(ports)`](#fn-specegresssourcewithportsmixin)
+      * [`fn withSelector(selector)`](#fn-specegresssourcewithselector)
+      * [`obj spec.egress.source.serviceAccounts`](#obj-specegresssourceserviceaccounts)
+        * [`fn withNames(names)`](#fn-specegresssourceserviceaccountswithnames)
+        * [`fn withNamesMixin(names)`](#fn-specegresssourceserviceaccountswithnamesmixin)
+        * [`fn withSelector(selector)`](#fn-specegresssourceserviceaccountswithselector)
+  * [`obj spec.ingress`](#obj-specingress)
+    * [`fn withAction(action)`](#fn-specingresswithaction)
+    * [`fn withIpVersion(ipVersion)`](#fn-specingresswithipversion)
+    * [`fn withNotProtocol(notProtocol)`](#fn-specingresswithnotprotocol)
+    * [`fn withProtocol(protocol)`](#fn-specingresswithprotocol)
+    * [`obj spec.ingress.destination`](#obj-specingressdestination)
+      * [`fn withNamespaceSelector(namespaceSelector)`](#fn-specingressdestinationwithnamespaceselector)
+      * [`fn withNets(nets)`](#fn-specingressdestinationwithnets)
+      * [`fn withNetsMixin(nets)`](#fn-specingressdestinationwithnetsmixin)
+      * [`fn withNotNets(notNets)`](#fn-specingressdestinationwithnotnets)
+      * [`fn withNotNetsMixin(notNets)`](#fn-specingressdestinationwithnotnetsmixin)
+      * [`fn withNotPorts(notPorts)`](#fn-specingressdestinationwithnotports)
+      * [`fn withNotPortsMixin(notPorts)`](#fn-specingressdestinationwithnotportsmixin)
+      * [`fn withNotSelector(notSelector)`](#fn-specingressdestinationwithnotselector)
+      * [`fn withPorts(ports)`](#fn-specingressdestinationwithports)
+      * [`fn withPortsMixin(ports)`](#fn-specingressdestinationwithportsmixin)
+      * [`fn withSelector(selector)`](#fn-specingressdestinationwithselector)
+      * [`obj spec.ingress.destination.serviceAccounts`](#obj-specingressdestinationserviceaccounts)
+        * [`fn withNames(names)`](#fn-specingressdestinationserviceaccountswithnames)
+        * [`fn withNamesMixin(names)`](#fn-specingressdestinationserviceaccountswithnamesmixin)
+        * [`fn withSelector(selector)`](#fn-specingressdestinationserviceaccountswithselector)
+    * [`obj spec.ingress.http`](#obj-specingresshttp)
+      * [`fn withMethods(methods)`](#fn-specingresshttpwithmethods)
+      * [`fn withMethodsMixin(methods)`](#fn-specingresshttpwithmethodsmixin)
+      * [`fn withPaths(paths)`](#fn-specingresshttpwithpaths)
+      * [`fn withPathsMixin(paths)`](#fn-specingresshttpwithpathsmixin)
+      * [`obj spec.ingress.http.paths`](#obj-specingresshttppaths)
+        * [`fn withExact(exact)`](#fn-specingresshttppathswithexact)
+        * [`fn withPrefix(prefix)`](#fn-specingresshttppathswithprefix)
+    * [`obj spec.ingress.icmp`](#obj-specingressicmp)
+      * [`fn withCode(code)`](#fn-specingressicmpwithcode)
+      * [`fn withType(type)`](#fn-specingressicmpwithtype)
+    * [`obj spec.ingress.metadata`](#obj-specingressmetadata)
+      * [`fn withAnnotations(annotations)`](#fn-specingressmetadatawithannotations)
+      * [`fn withAnnotationsMixin(annotations)`](#fn-specingressmetadatawithannotationsmixin)
+    * [`obj spec.ingress.notICMP`](#obj-specingressnoticmp)
+      * [`fn withCode(code)`](#fn-specingressnoticmpwithcode)
+      * [`fn withType(type)`](#fn-specingressnoticmpwithtype)
+    * [`obj spec.ingress.source`](#obj-specingresssource)
+      * [`fn withNamespaceSelector(namespaceSelector)`](#fn-specingresssourcewithnamespaceselector)
+      * [`fn withNets(nets)`](#fn-specingresssourcewithnets)
+      * [`fn withNetsMixin(nets)`](#fn-specingresssourcewithnetsmixin)
+      * [`fn withNotNets(notNets)`](#fn-specingresssourcewithnotnets)
+      * [`fn withNotNetsMixin(notNets)`](#fn-specingresssourcewithnotnetsmixin)
+      * [`fn withNotPorts(notPorts)`](#fn-specingresssourcewithnotports)
+      * [`fn withNotPortsMixin(notPorts)`](#fn-specingresssourcewithnotportsmixin)
+      * [`fn withNotSelector(notSelector)`](#fn-specingresssourcewithnotselector)
+      * [`fn withPorts(ports)`](#fn-specingresssourcewithports)
+      * [`fn withPortsMixin(ports)`](#fn-specingresssourcewithportsmixin)
+      * [`fn withSelector(selector)`](#fn-specingresssourcewithselector)
+      * [`obj spec.ingress.source.serviceAccounts`](#obj-specingresssourceserviceaccounts)
+        * [`fn withNames(names)`](#fn-specingresssourceserviceaccountswithnames)
+        * [`fn withNamesMixin(names)`](#fn-specingresssourceserviceaccountswithnamesmixin)
+        * [`fn withSelector(selector)`](#fn-specingresssourceserviceaccountswithselector)
 
 ## Fields
 
@@ -159,24 +265,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -351,3 +439,839 @@ withTypesMixin(types)
 "Types indicates whether this policy applies to ingress, or to egress, or to both.  When not explicitly specified (and so the value on creation is empty or nil), Calico defaults Types according to what Ingress and Egress rules are present in the policy.  The default is: \n - [ PolicyTypeIngress ], if there are no Egress rules (including the case where there are   also no Ingress rules) \n - [ PolicyTypeEgress ], if there are Egress rules but no Ingress rules \n - [ PolicyTypeIngress, PolicyTypeEgress ], if there are both Ingress and Egress rules. \n When the policy is read back again, Types will always be one of these values, never empty or nil."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.egress
+
+"The ordered set of egress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
+
+### fn spec.egress.withAction
+
+```ts
+withAction(action)
+```
+
+
+
+### fn spec.egress.withIpVersion
+
+```ts
+withIpVersion(ipVersion)
+```
+
+"IPVersion is an optional field that restricts the rule to only match a specific IP version."
+
+### fn spec.egress.withNotProtocol
+
+```ts
+withNotProtocol(notProtocol)
+```
+
+"NotProtocol is the negated version of the Protocol field."
+
+### fn spec.egress.withProtocol
+
+```ts
+withProtocol(protocol)
+```
+
+"Protocol is an optional field that restricts the rule to only apply to traffic of a specific IP protocol. Required if any of the EntityRules contain Ports (because ports only apply to certain protocols). \n Must be one of these string values: \"TCP\", \"UDP\", \"ICMP\", \"ICMPv6\", \"SCTP\", \"UDPLite\" or an integer in the range 1-255."
+
+## obj spec.egress.destination
+
+"Destination contains the match criteria that apply to destination entity."
+
+### fn spec.egress.destination.withNamespaceSelector
+
+```ts
+withNamespaceSelector(namespaceSelector)
+```
+
+"NamespaceSelector is an optional field that contains a selector expression. Only traffic that originates from (or terminates at) endpoints within the selected namespaces will be matched. When both NamespaceSelector and Selector are defined on the same rule, then only workload endpoints that are matched by both selectors will be selected by the rule. \n For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting only workload endpoints in the same namespace as the NetworkPolicy. \n For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting only GlobalNetworkSet or HostEndpoint. \n For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload endpoints across all namespaces."
+
+### fn spec.egress.destination.withNets
+
+```ts
+withNets(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+### fn spec.egress.destination.withNetsMixin
+
+```ts
+withNetsMixin(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.destination.withNotNets
+
+```ts
+withNotNets(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+### fn spec.egress.destination.withNotNetsMixin
+
+```ts
+withNotNetsMixin(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.destination.withNotPorts
+
+```ts
+withNotPorts(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.egress.destination.withNotPortsMixin
+
+```ts
+withNotPortsMixin(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.destination.withNotSelector
+
+```ts
+withNotSelector(notSelector)
+```
+
+"NotSelector is the negated version of the Selector field.  See Selector field for subtleties with negated selectors."
+
+### fn spec.egress.destination.withPorts
+
+```ts
+withPorts(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.egress.destination.withPortsMixin
+
+```ts
+withPortsMixin(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.destination.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that contains a selector expression (see Policy for sample syntax).  Only traffic that originates from (terminates at) endpoints matching the selector will be matched. \n Note that: in addition to the negated version of the Selector (see NotSelector below), the selector expression syntax itself supports negation.  The two types of negation are subtly different. One negates the set of matched endpoints, the other negates the whole match: \n \tSelector = \"!has(my_label)\" matches packets that are from other Calico-controlled \tendpoints that do not have the label “my_label”. \n \tNotSelector = \"has(my_label)\" matches packets that are not from Calico-controlled \tendpoints that do have the label “my_label”. \n The effect is that the latter will accept packets from non-Calico sources whereas the former is limited to packets from Calico-controlled endpoints."
+
+## obj spec.egress.destination.serviceAccounts
+
+"ServiceAccounts is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a matching service account."
+
+### fn spec.egress.destination.serviceAccounts.withNames
+
+```ts
+withNames(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+### fn spec.egress.destination.serviceAccounts.withNamesMixin
+
+```ts
+withNamesMixin(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.destination.serviceAccounts.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account that matches the given label selector. If both Names and Selector are specified then they are AND'ed."
+
+## obj spec.egress.http
+
+"HTTP contains match criteria that apply to HTTP requests."
+
+### fn spec.egress.http.withMethods
+
+```ts
+withMethods(methods)
+```
+
+"Methods is an optional field that restricts the rule to apply only to HTTP requests that use one of the listed HTTP Methods (e.g. GET, PUT, etc.) Multiple methods are OR'd together."
+
+### fn spec.egress.http.withMethodsMixin
+
+```ts
+withMethodsMixin(methods)
+```
+
+"Methods is an optional field that restricts the rule to apply only to HTTP requests that use one of the listed HTTP Methods (e.g. GET, PUT, etc.) Multiple methods are OR'd together."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.http.withPaths
+
+```ts
+withPaths(paths)
+```
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+### fn spec.egress.http.withPathsMixin
+
+```ts
+withPathsMixin(paths)
+```
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.egress.http.paths
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+### fn spec.egress.http.paths.withExact
+
+```ts
+withExact(exact)
+```
+
+
+
+### fn spec.egress.http.paths.withPrefix
+
+```ts
+withPrefix(prefix)
+```
+
+
+
+## obj spec.egress.icmp
+
+"ICMP is an optional field that restricts the rule to apply to a specific type and code of ICMP traffic.  This should only be specified if the Protocol field is set to \"ICMP\" or \"ICMPv6\"."
+
+### fn spec.egress.icmp.withCode
+
+```ts
+withCode(code)
+```
+
+"Match on a specific ICMP code.  If specified, the Type value must also be specified. This is a technical limitation imposed by the kernel’s iptables firewall, which Calico uses to enforce the rule."
+
+### fn spec.egress.icmp.withType
+
+```ts
+withType(type)
+```
+
+"Match on a specific ICMP type.  For example a value of 8 refers to ICMP Echo Request (i.e. pings)."
+
+## obj spec.egress.metadata
+
+"Metadata contains additional information for this rule"
+
+### fn spec.egress.metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations is a set of key value pairs that give extra information about the rule"
+
+### fn spec.egress.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations is a set of key value pairs that give extra information about the rule"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.egress.notICMP
+
+"NotICMP is the negated version of the ICMP field."
+
+### fn spec.egress.notICMP.withCode
+
+```ts
+withCode(code)
+```
+
+"Match on a specific ICMP code.  If specified, the Type value must also be specified. This is a technical limitation imposed by the kernel’s iptables firewall, which Calico uses to enforce the rule."
+
+### fn spec.egress.notICMP.withType
+
+```ts
+withType(type)
+```
+
+"Match on a specific ICMP type.  For example a value of 8 refers to ICMP Echo Request (i.e. pings)."
+
+## obj spec.egress.source
+
+"Source contains the match criteria that apply to source entity."
+
+### fn spec.egress.source.withNamespaceSelector
+
+```ts
+withNamespaceSelector(namespaceSelector)
+```
+
+"NamespaceSelector is an optional field that contains a selector expression. Only traffic that originates from (or terminates at) endpoints within the selected namespaces will be matched. When both NamespaceSelector and Selector are defined on the same rule, then only workload endpoints that are matched by both selectors will be selected by the rule. \n For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting only workload endpoints in the same namespace as the NetworkPolicy. \n For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting only GlobalNetworkSet or HostEndpoint. \n For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload endpoints across all namespaces."
+
+### fn spec.egress.source.withNets
+
+```ts
+withNets(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+### fn spec.egress.source.withNetsMixin
+
+```ts
+withNetsMixin(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.source.withNotNets
+
+```ts
+withNotNets(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+### fn spec.egress.source.withNotNetsMixin
+
+```ts
+withNotNetsMixin(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.source.withNotPorts
+
+```ts
+withNotPorts(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.egress.source.withNotPortsMixin
+
+```ts
+withNotPortsMixin(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.source.withNotSelector
+
+```ts
+withNotSelector(notSelector)
+```
+
+"NotSelector is the negated version of the Selector field.  See Selector field for subtleties with negated selectors."
+
+### fn spec.egress.source.withPorts
+
+```ts
+withPorts(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.egress.source.withPortsMixin
+
+```ts
+withPortsMixin(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.source.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that contains a selector expression (see Policy for sample syntax).  Only traffic that originates from (terminates at) endpoints matching the selector will be matched. \n Note that: in addition to the negated version of the Selector (see NotSelector below), the selector expression syntax itself supports negation.  The two types of negation are subtly different. One negates the set of matched endpoints, the other negates the whole match: \n \tSelector = \"!has(my_label)\" matches packets that are from other Calico-controlled \tendpoints that do not have the label “my_label”. \n \tNotSelector = \"has(my_label)\" matches packets that are not from Calico-controlled \tendpoints that do have the label “my_label”. \n The effect is that the latter will accept packets from non-Calico sources whereas the former is limited to packets from Calico-controlled endpoints."
+
+## obj spec.egress.source.serviceAccounts
+
+"ServiceAccounts is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a matching service account."
+
+### fn spec.egress.source.serviceAccounts.withNames
+
+```ts
+withNames(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+### fn spec.egress.source.serviceAccounts.withNamesMixin
+
+```ts
+withNamesMixin(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.egress.source.serviceAccounts.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account that matches the given label selector. If both Names and Selector are specified then they are AND'ed."
+
+## obj spec.ingress
+
+"The ordered set of ingress rules.  Each rule contains a set of packet match criteria and a corresponding action to apply."
+
+### fn spec.ingress.withAction
+
+```ts
+withAction(action)
+```
+
+
+
+### fn spec.ingress.withIpVersion
+
+```ts
+withIpVersion(ipVersion)
+```
+
+"IPVersion is an optional field that restricts the rule to only match a specific IP version."
+
+### fn spec.ingress.withNotProtocol
+
+```ts
+withNotProtocol(notProtocol)
+```
+
+"NotProtocol is the negated version of the Protocol field."
+
+### fn spec.ingress.withProtocol
+
+```ts
+withProtocol(protocol)
+```
+
+"Protocol is an optional field that restricts the rule to only apply to traffic of a specific IP protocol. Required if any of the EntityRules contain Ports (because ports only apply to certain protocols). \n Must be one of these string values: \"TCP\", \"UDP\", \"ICMP\", \"ICMPv6\", \"SCTP\", \"UDPLite\" or an integer in the range 1-255."
+
+## obj spec.ingress.destination
+
+"Destination contains the match criteria that apply to destination entity."
+
+### fn spec.ingress.destination.withNamespaceSelector
+
+```ts
+withNamespaceSelector(namespaceSelector)
+```
+
+"NamespaceSelector is an optional field that contains a selector expression. Only traffic that originates from (or terminates at) endpoints within the selected namespaces will be matched. When both NamespaceSelector and Selector are defined on the same rule, then only workload endpoints that are matched by both selectors will be selected by the rule. \n For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting only workload endpoints in the same namespace as the NetworkPolicy. \n For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting only GlobalNetworkSet or HostEndpoint. \n For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload endpoints across all namespaces."
+
+### fn spec.ingress.destination.withNets
+
+```ts
+withNets(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+### fn spec.ingress.destination.withNetsMixin
+
+```ts
+withNetsMixin(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.destination.withNotNets
+
+```ts
+withNotNets(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+### fn spec.ingress.destination.withNotNetsMixin
+
+```ts
+withNotNetsMixin(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.destination.withNotPorts
+
+```ts
+withNotPorts(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.ingress.destination.withNotPortsMixin
+
+```ts
+withNotPortsMixin(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.destination.withNotSelector
+
+```ts
+withNotSelector(notSelector)
+```
+
+"NotSelector is the negated version of the Selector field.  See Selector field for subtleties with negated selectors."
+
+### fn spec.ingress.destination.withPorts
+
+```ts
+withPorts(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.ingress.destination.withPortsMixin
+
+```ts
+withPortsMixin(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.destination.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that contains a selector expression (see Policy for sample syntax).  Only traffic that originates from (terminates at) endpoints matching the selector will be matched. \n Note that: in addition to the negated version of the Selector (see NotSelector below), the selector expression syntax itself supports negation.  The two types of negation are subtly different. One negates the set of matched endpoints, the other negates the whole match: \n \tSelector = \"!has(my_label)\" matches packets that are from other Calico-controlled \tendpoints that do not have the label “my_label”. \n \tNotSelector = \"has(my_label)\" matches packets that are not from Calico-controlled \tendpoints that do have the label “my_label”. \n The effect is that the latter will accept packets from non-Calico sources whereas the former is limited to packets from Calico-controlled endpoints."
+
+## obj spec.ingress.destination.serviceAccounts
+
+"ServiceAccounts is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a matching service account."
+
+### fn spec.ingress.destination.serviceAccounts.withNames
+
+```ts
+withNames(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+### fn spec.ingress.destination.serviceAccounts.withNamesMixin
+
+```ts
+withNamesMixin(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.destination.serviceAccounts.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account that matches the given label selector. If both Names and Selector are specified then they are AND'ed."
+
+## obj spec.ingress.http
+
+"HTTP contains match criteria that apply to HTTP requests."
+
+### fn spec.ingress.http.withMethods
+
+```ts
+withMethods(methods)
+```
+
+"Methods is an optional field that restricts the rule to apply only to HTTP requests that use one of the listed HTTP Methods (e.g. GET, PUT, etc.) Multiple methods are OR'd together."
+
+### fn spec.ingress.http.withMethodsMixin
+
+```ts
+withMethodsMixin(methods)
+```
+
+"Methods is an optional field that restricts the rule to apply only to HTTP requests that use one of the listed HTTP Methods (e.g. GET, PUT, etc.) Multiple methods are OR'd together."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.http.withPaths
+
+```ts
+withPaths(paths)
+```
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+### fn spec.ingress.http.withPathsMixin
+
+```ts
+withPathsMixin(paths)
+```
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.http.paths
+
+"Paths is an optional field that restricts the rule to apply to HTTP requests that use one of the listed HTTP Paths. Multiple paths are OR'd together. e.g: - exact: /foo - prefix: /bar NOTE: Each entry may ONLY specify either a `exact` or a `prefix` match. The validator will check for it."
+
+### fn spec.ingress.http.paths.withExact
+
+```ts
+withExact(exact)
+```
+
+
+
+### fn spec.ingress.http.paths.withPrefix
+
+```ts
+withPrefix(prefix)
+```
+
+
+
+## obj spec.ingress.icmp
+
+"ICMP is an optional field that restricts the rule to apply to a specific type and code of ICMP traffic.  This should only be specified if the Protocol field is set to \"ICMP\" or \"ICMPv6\"."
+
+### fn spec.ingress.icmp.withCode
+
+```ts
+withCode(code)
+```
+
+"Match on a specific ICMP code.  If specified, the Type value must also be specified. This is a technical limitation imposed by the kernel’s iptables firewall, which Calico uses to enforce the rule."
+
+### fn spec.ingress.icmp.withType
+
+```ts
+withType(type)
+```
+
+"Match on a specific ICMP type.  For example a value of 8 refers to ICMP Echo Request (i.e. pings)."
+
+## obj spec.ingress.metadata
+
+"Metadata contains additional information for this rule"
+
+### fn spec.ingress.metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations is a set of key value pairs that give extra information about the rule"
+
+### fn spec.ingress.metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations is a set of key value pairs that give extra information about the rule"
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.ingress.notICMP
+
+"NotICMP is the negated version of the ICMP field."
+
+### fn spec.ingress.notICMP.withCode
+
+```ts
+withCode(code)
+```
+
+"Match on a specific ICMP code.  If specified, the Type value must also be specified. This is a technical limitation imposed by the kernel’s iptables firewall, which Calico uses to enforce the rule."
+
+### fn spec.ingress.notICMP.withType
+
+```ts
+withType(type)
+```
+
+"Match on a specific ICMP type.  For example a value of 8 refers to ICMP Echo Request (i.e. pings)."
+
+## obj spec.ingress.source
+
+"Source contains the match criteria that apply to source entity."
+
+### fn spec.ingress.source.withNamespaceSelector
+
+```ts
+withNamespaceSelector(namespaceSelector)
+```
+
+"NamespaceSelector is an optional field that contains a selector expression. Only traffic that originates from (or terminates at) endpoints within the selected namespaces will be matched. When both NamespaceSelector and Selector are defined on the same rule, then only workload endpoints that are matched by both selectors will be selected by the rule. \n For NetworkPolicy, an empty NamespaceSelector implies that the Selector is limited to selecting only workload endpoints in the same namespace as the NetworkPolicy. \n For NetworkPolicy, `global()` NamespaceSelector implies that the Selector is limited to selecting only GlobalNetworkSet or HostEndpoint. \n For GlobalNetworkPolicy, an empty NamespaceSelector implies the Selector applies to workload endpoints across all namespaces."
+
+### fn spec.ingress.source.withNets
+
+```ts
+withNets(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+### fn spec.ingress.source.withNetsMixin
+
+```ts
+withNetsMixin(nets)
+```
+
+"Nets is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) IP addresses in any of the given subnets."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.source.withNotNets
+
+```ts
+withNotNets(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+### fn spec.ingress.source.withNotNetsMixin
+
+```ts
+withNotNetsMixin(notNets)
+```
+
+"NotNets is the negated version of the Nets field."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.source.withNotPorts
+
+```ts
+withNotPorts(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.ingress.source.withNotPortsMixin
+
+```ts
+withNotPortsMixin(notPorts)
+```
+
+"NotPorts is the negated version of the Ports field. Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.source.withNotSelector
+
+```ts
+withNotSelector(notSelector)
+```
+
+"NotSelector is the negated version of the Selector field.  See Selector field for subtleties with negated selectors."
+
+### fn spec.ingress.source.withPorts
+
+```ts
+withPorts(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+### fn spec.ingress.source.withPortsMixin
+
+```ts
+withPortsMixin(ports)
+```
+
+"Ports is an optional field that restricts the rule to only apply to traffic that has a source (destination) port that matches one of these ranges/values. This value is a list of integers or strings that represent ranges of ports. \n Since only some protocols have ports, if any ports are specified it requires the Protocol match in the Rule to be set to \"TCP\" or \"UDP\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.source.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that contains a selector expression (see Policy for sample syntax).  Only traffic that originates from (terminates at) endpoints matching the selector will be matched. \n Note that: in addition to the negated version of the Selector (see NotSelector below), the selector expression syntax itself supports negation.  The two types of negation are subtly different. One negates the set of matched endpoints, the other negates the whole match: \n \tSelector = \"!has(my_label)\" matches packets that are from other Calico-controlled \tendpoints that do not have the label “my_label”. \n \tNotSelector = \"has(my_label)\" matches packets that are not from Calico-controlled \tendpoints that do have the label “my_label”. \n The effect is that the latter will accept packets from non-Calico sources whereas the former is limited to packets from Calico-controlled endpoints."
+
+## obj spec.ingress.source.serviceAccounts
+
+"ServiceAccounts is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a matching service account."
+
+### fn spec.ingress.source.serviceAccounts.withNames
+
+```ts
+withNames(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+### fn spec.ingress.source.serviceAccounts.withNamesMixin
+
+```ts
+withNamesMixin(names)
+```
+
+"Names is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account whose name is in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.ingress.source.serviceAccounts.withSelector
+
+```ts
+withSelector(selector)
+```
+
+"Selector is an optional field that restricts the rule to only apply to traffic that originates from (or terminates at) a pod running as a service account that matches the given label selector. If both Names and Selector are specified then they are AND'ed."

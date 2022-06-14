@@ -22,8 +22,6 @@ permalink: /3.15/crd/v1/bgpConfiguration/
   * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
   * [`fn withLabels(labels)`](#fn-metadatawithlabels)
   * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
-  * [`fn withManagedFields(managedFields)`](#fn-metadatawithmanagedfields)
-  * [`fn withManagedFieldsMixin(managedFields)`](#fn-metadatawithmanagedfieldsmixin)
   * [`fn withName(name)`](#fn-metadatawithname)
   * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
   * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
@@ -39,6 +37,10 @@ permalink: /3.15/crd/v1/bgpConfiguration/
   * [`fn withServiceClusterIPsMixin(serviceClusterIPs)`](#fn-specwithserviceclusteripsmixin)
   * [`fn withServiceExternalIPs(serviceExternalIPs)`](#fn-specwithserviceexternalips)
   * [`fn withServiceExternalIPsMixin(serviceExternalIPs)`](#fn-specwithserviceexternalipsmixin)
+  * [`obj spec.serviceClusterIPs`](#obj-specserviceclusterips)
+    * [`fn withCidr(cidr)`](#fn-specserviceclusteripswithcidr)
+  * [`obj spec.serviceExternalIPs`](#obj-specserviceexternalips)
+    * [`fn withCidr(cidr)`](#fn-specserviceexternalipswithcidr)
 
 ## Fields
 
@@ -153,24 +155,6 @@ withLabelsMixin(labels)
 ```
 
 "Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
-
-**Note:** This function appends passed data to existing values
-
-### fn metadata.withManagedFields
-
-```ts
-withManagedFields(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
-
-### fn metadata.withManagedFieldsMixin
-
-```ts
-withManagedFieldsMixin(managedFields)
-```
-
-"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object."
 
 **Note:** This function appends passed data to existing values
 
@@ -295,3 +279,26 @@ withServiceExternalIPsMixin(serviceExternalIPs)
 "ServiceExternalIPs are the CIDR blocks for Kubernetes Service External IPs. Kubernetes Service ExternalIPs will only be advertised if they are within one of these blocks."
 
 **Note:** This function appends passed data to existing values
+
+## obj spec.serviceClusterIPs
+
+"ServiceClusterIPs are the CIDR blocks from which service cluster IPs are allocated. If specified, Calico will advertise these blocks, as well as any cluster IPs within them."
+
+### fn spec.serviceClusterIPs.withCidr
+
+```ts
+withCidr(cidr)
+```
+
+
+
+## obj spec.serviceExternalIPs
+
+"ServiceExternalIPs are the CIDR blocks for Kubernetes Service External IPs. Kubernetes Service ExternalIPs will only be advertised if they are within one of these blocks."
+
+### fn spec.serviceExternalIPs.withCidr
+
+```ts
+withCidr(cidr)
+```
+
