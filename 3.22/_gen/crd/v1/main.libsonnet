@@ -9,6 +9,7 @@
   globalNetworkPolicy: (import 'globalNetworkPolicy.libsonnet'),
   globalNetworkSet: (import 'globalNetworkSet.libsonnet'),
   hostEndpoint: (import 'hostEndpoint.libsonnet'),
+  ipReservation: (import 'ipReservation.libsonnet'),
   ipamBlock: (import 'ipamBlock.libsonnet'),
   ipamConfig: (import 'ipamConfig.libsonnet'),
   ipamHandle: (import 'ipamHandle.libsonnet'),

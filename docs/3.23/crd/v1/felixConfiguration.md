@@ -1,5 +1,5 @@
 ---
-permalink: /3.21/crd/v1/felixConfiguration/
+permalink: /3.23/crd/v1/felixConfiguration/
 ---
 
 # crd.v1.felixConfiguration
@@ -87,6 +87,7 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withIpv6Support(ipv6Support)`](#fn-specwithipv6support)
   * [`fn withKubeNodePortRanges(kubeNodePortRanges)`](#fn-specwithkubenodeportranges)
   * [`fn withKubeNodePortRangesMixin(kubeNodePortRanges)`](#fn-specwithkubenodeportrangesmixin)
+  * [`fn withLogDebugFilenameRegex(logDebugFilenameRegex)`](#fn-specwithlogdebugfilenameregex)
   * [`fn withLogFilePath(logFilePath)`](#fn-specwithlogfilepath)
   * [`fn withLogPrefix(logPrefix)`](#fn-specwithlogprefix)
   * [`fn withLogSeverityFile(logSeverityFile)`](#fn-specwithlogseverityfile)
@@ -783,6 +784,14 @@ withKubeNodePortRangesMixin(kubeNodePortRanges)
 "KubeNodePortRanges holds list of port ranges used for service node ports. Only used if felix detects kube-proxy running in ipvs mode. Felix uses these ranges to separate host and workload traffic. [Default: 30000:32767]."
 
 **Note:** This function appends passed data to existing values
+
+### fn spec.withLogDebugFilenameRegex
+
+```ts
+withLogDebugFilenameRegex(logDebugFilenameRegex)
+```
+
+"LogDebugFilenameRegex controls which source code files have their Debug log output included in the logs. Only logs from files with names that match the given regular expression are included.  The filter only applies to Debug level logs."
 
 ### fn spec.withLogFilePath
 

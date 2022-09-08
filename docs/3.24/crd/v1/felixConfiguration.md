@@ -1,5 +1,5 @@
 ---
-permalink: /3.21/crd/v1/felixConfiguration/
+permalink: /3.24/crd/v1/felixConfiguration/
 ---
 
 # crd.v1.felixConfiguration
@@ -37,15 +37,25 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withBpfDataIfacePattern(bpfDataIfacePattern)`](#fn-specwithbpfdataifacepattern)
   * [`fn withBpfDisableUnprivileged(bpfDisableUnprivileged)`](#fn-specwithbpfdisableunprivileged)
   * [`fn withBpfEnabled(bpfEnabled)`](#fn-specwithbpfenabled)
+  * [`fn withBpfEnforceRPF(bpfEnforceRPF)`](#fn-specwithbpfenforcerpf)
   * [`fn withBpfExtToServiceConnmark(bpfExtToServiceConnmark)`](#fn-specwithbpfexttoserviceconnmark)
   * [`fn withBpfExternalServiceMode(bpfExternalServiceMode)`](#fn-specwithbpfexternalservicemode)
   * [`fn withBpfKubeProxyEndpointSlicesEnabled(bpfKubeProxyEndpointSlicesEnabled)`](#fn-specwithbpfkubeproxyendpointslicesenabled)
   * [`fn withBpfKubeProxyIptablesCleanupEnabled(bpfKubeProxyIptablesCleanupEnabled)`](#fn-specwithbpfkubeproxyiptablescleanupenabled)
   * [`fn withBpfKubeProxyMinSyncPeriod(bpfKubeProxyMinSyncPeriod)`](#fn-specwithbpfkubeproxyminsyncperiod)
   * [`fn withBpfLogLevel(bpfLogLevel)`](#fn-specwithbpfloglevel)
+  * [`fn withBpfMapSizeConntrack(bpfMapSizeConntrack)`](#fn-specwithbpfmapsizeconntrack)
+  * [`fn withBpfMapSizeIPSets(bpfMapSizeIPSets)`](#fn-specwithbpfmapsizeipsets)
+  * [`fn withBpfMapSizeIfState(bpfMapSizeIfState)`](#fn-specwithbpfmapsizeifstate)
+  * [`fn withBpfMapSizeNATAffinity(bpfMapSizeNATAffinity)`](#fn-specwithbpfmapsizenataffinity)
+  * [`fn withBpfMapSizeNATBackend(bpfMapSizeNATBackend)`](#fn-specwithbpfmapsizenatbackend)
+  * [`fn withBpfMapSizeNATFrontend(bpfMapSizeNATFrontend)`](#fn-specwithbpfmapsizenatfrontend)
+  * [`fn withBpfMapSizeRoute(bpfMapSizeRoute)`](#fn-specwithbpfmapsizeroute)
   * [`fn withBpfPSNATPorts(bpfPSNATPorts)`](#fn-specwithbpfpsnatports)
+  * [`fn withBpfPolicyDebugEnabled(bpfPolicyDebugEnabled)`](#fn-specwithbpfpolicydebugenabled)
   * [`fn withChainInsertMode(chainInsertMode)`](#fn-specwithchaininsertmode)
   * [`fn withDataplaneDriver(dataplaneDriver)`](#fn-specwithdataplanedriver)
+  * [`fn withDataplaneWatchdogTimeout(dataplaneWatchdogTimeout)`](#fn-specwithdataplanewatchdogtimeout)
   * [`fn withDebugDisableLogDropping(debugDisableLogDropping)`](#fn-specwithdebugdisablelogdropping)
   * [`fn withDebugMemoryProfilePath(debugMemoryProfilePath)`](#fn-specwithdebugmemoryprofilepath)
   * [`fn withDebugSimulateCalcGraphHangAfter(debugSimulateCalcGraphHangAfter)`](#fn-specwithdebugsimulatecalcgraphhangafter)
@@ -53,6 +63,7 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withDefaultEndpointToHostAction(defaultEndpointToHostAction)`](#fn-specwithdefaultendpointtohostaction)
   * [`fn withDeviceRouteProtocol(deviceRouteProtocol)`](#fn-specwithdevicerouteprotocol)
   * [`fn withDeviceRouteSourceAddress(deviceRouteSourceAddress)`](#fn-specwithdeviceroutesourceaddress)
+  * [`fn withDeviceRouteSourceAddressIPv6(deviceRouteSourceAddressIPv6)`](#fn-specwithdeviceroutesourceaddressipv6)
   * [`fn withDisableConntrackInvalidCheck(disableConntrackInvalidCheck)`](#fn-specwithdisableconntrackinvalidcheck)
   * [`fn withEndpointReportingDelay(endpointReportingDelay)`](#fn-specwithendpointreportingdelay)
   * [`fn withEndpointReportingEnabled(endpointReportingEnabled)`](#fn-specwithendpointreportingenabled)
@@ -87,6 +98,7 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withIpv6Support(ipv6Support)`](#fn-specwithipv6support)
   * [`fn withKubeNodePortRanges(kubeNodePortRanges)`](#fn-specwithkubenodeportranges)
   * [`fn withKubeNodePortRangesMixin(kubeNodePortRanges)`](#fn-specwithkubenodeportrangesmixin)
+  * [`fn withLogDebugFilenameRegex(logDebugFilenameRegex)`](#fn-specwithlogdebugfilenameregex)
   * [`fn withLogFilePath(logFilePath)`](#fn-specwithlogfilepath)
   * [`fn withLogPrefix(logPrefix)`](#fn-specwithlogprefix)
   * [`fn withLogSeverityFile(logSeverityFile)`](#fn-specwithlogseverityfile)
@@ -112,6 +124,9 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withReportingTTL(reportingTTL)`](#fn-specwithreportingttl)
   * [`fn withRouteRefreshInterval(routeRefreshInterval)`](#fn-specwithrouterefreshinterval)
   * [`fn withRouteSource(routeSource)`](#fn-specwithroutesource)
+  * [`fn withRouteSyncDisabled(routeSyncDisabled)`](#fn-specwithroutesyncdisabled)
+  * [`fn withRouteTableRanges(routeTableRanges)`](#fn-specwithroutetableranges)
+  * [`fn withRouteTableRangesMixin(routeTableRanges)`](#fn-specwithroutetablerangesmixin)
   * [`fn withServiceLoopPrevention(serviceLoopPrevention)`](#fn-specwithserviceloopprevention)
   * [`fn withSidecarAccelerationEnabled(sidecarAccelerationEnabled)`](#fn-specwithsidecaraccelerationenabled)
   * [`fn withUsageReportingEnabled(usageReportingEnabled)`](#fn-specwithusagereportingenabled)
@@ -120,14 +135,21 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`fn withUseInternalDataplaneDriver(useInternalDataplaneDriver)`](#fn-specwithuseinternaldataplanedriver)
   * [`fn withVxlanEnabled(vxlanEnabled)`](#fn-specwithvxlanenabled)
   * [`fn withVxlanMTU(vxlanMTU)`](#fn-specwithvxlanmtu)
+  * [`fn withVxlanMTUV6(vxlanMTUV6)`](#fn-specwithvxlanmtuv6)
   * [`fn withVxlanPort(vxlanPort)`](#fn-specwithvxlanport)
   * [`fn withVxlanVNI(vxlanVNI)`](#fn-specwithvxlanvni)
   * [`fn withWireguardEnabled(wireguardEnabled)`](#fn-specwithwireguardenabled)
+  * [`fn withWireguardEnabledV6(wireguardEnabledV6)`](#fn-specwithwireguardenabledv6)
   * [`fn withWireguardHostEncryptionEnabled(wireguardHostEncryptionEnabled)`](#fn-specwithwireguardhostencryptionenabled)
   * [`fn withWireguardInterfaceName(wireguardInterfaceName)`](#fn-specwithwireguardinterfacename)
+  * [`fn withWireguardInterfaceNameV6(wireguardInterfaceNameV6)`](#fn-specwithwireguardinterfacenamev6)
+  * [`fn withWireguardKeepAlive(wireguardKeepAlive)`](#fn-specwithwireguardkeepalive)
   * [`fn withWireguardListeningPort(wireguardListeningPort)`](#fn-specwithwireguardlisteningport)
+  * [`fn withWireguardListeningPortV6(wireguardListeningPortV6)`](#fn-specwithwireguardlisteningportv6)
   * [`fn withWireguardMTU(wireguardMTU)`](#fn-specwithwireguardmtu)
+  * [`fn withWireguardMTUV6(wireguardMTUV6)`](#fn-specwithwireguardmtuv6)
   * [`fn withWireguardRoutingRulePriority(wireguardRoutingRulePriority)`](#fn-specwithwireguardroutingrulepriority)
+  * [`fn withWorkloadSourceSpoofing(workloadSourceSpoofing)`](#fn-specwithworkloadsourcespoofing)
   * [`fn withXdpEnabled(xdpEnabled)`](#fn-specwithxdpenabled)
   * [`fn withXdpRefreshInterval(xdpRefreshInterval)`](#fn-specwithxdprefreshinterval)
   * [`obj spec.failsafeInboundHostPorts`](#obj-specfailsafeinboundhostports)
@@ -141,6 +163,9 @@ permalink: /3.21/crd/v1/felixConfiguration/
   * [`obj spec.routeTableRange`](#obj-specroutetablerange)
     * [`fn withMax(max)`](#fn-specroutetablerangewithmax)
     * [`fn withMin(min)`](#fn-specroutetablerangewithmin)
+  * [`obj spec.routeTableRanges`](#obj-specroutetableranges)
+    * [`fn withMax(max)`](#fn-specroutetablerangeswithmax)
+    * [`fn withMin(min)`](#fn-specroutetablerangeswithmin)
 
 ## Fields
 
@@ -376,13 +401,21 @@ withBpfEnabled(bpfEnabled)
 
 "BPFEnabled, if enabled Felix will use the BPF dataplane. [Default: false]"
 
+### fn spec.withBpfEnforceRPF
+
+```ts
+withBpfEnforceRPF(bpfEnforceRPF)
+```
+
+"BPFEnforceRPF enforce strict RPF on all interfaces with BPF programs regardless of what is the per-interfaces or global setting. Possible values are Disabled or Strict. [Default: Strict]"
+
 ### fn spec.withBpfExtToServiceConnmark
 
 ```ts
 withBpfExtToServiceConnmark(bpfExtToServiceConnmark)
 ```
 
-"BPFExtToServiceConnmark in BPF mode, control a 32bit mark that is set on connections from an external client to a local service. This mark allows us to control how packets of that connection are routed within the host and how is routing intepreted by RPF check. [Default: 0]"
+"BPFExtToServiceConnmark in BPF mode, control a 32bit mark that is set on connections from an external client to a local service. This mark allows us to control how packets of that connection are routed within the host and how is routing interpreted by RPF check. [Default: 0]"
 
 ### fn spec.withBpfExternalServiceMode
 
@@ -424,6 +457,62 @@ withBpfLogLevel(bpfLogLevel)
 
 "BPFLogLevel controls the log level of the BPF programs when in BPF dataplane mode.  One of \"Off\", \"Info\", or \"Debug\".  The logs are emitted to the BPF trace pipe, accessible with the command `tc exec bpf debug`. [Default: Off]."
 
+### fn spec.withBpfMapSizeConntrack
+
+```ts
+withBpfMapSizeConntrack(bpfMapSizeConntrack)
+```
+
+"BPFMapSizeConntrack sets the size for the conntrack map.  This map must be large enough to hold an entry for each active connection.  Warning: changing the size of the conntrack map can cause disruption."
+
+### fn spec.withBpfMapSizeIPSets
+
+```ts
+withBpfMapSizeIPSets(bpfMapSizeIPSets)
+```
+
+"BPFMapSizeIPSets sets the size for ipsets map.  The IP sets map must be large enough to hold an entry for each endpoint matched by every selector in the source/destination matches in network policy.  Selectors such as \"all()\" can result in large numbers of entries (one entry per endpoint in that case)."
+
+### fn spec.withBpfMapSizeIfState
+
+```ts
+withBpfMapSizeIfState(bpfMapSizeIfState)
+```
+
+"BPFMapSizeIfState sets the size for ifstate map.  The ifstate map must be large enough to hold an entry for each device (host + workloads) on a host."
+
+### fn spec.withBpfMapSizeNATAffinity
+
+```ts
+withBpfMapSizeNATAffinity(bpfMapSizeNATAffinity)
+```
+
+
+
+### fn spec.withBpfMapSizeNATBackend
+
+```ts
+withBpfMapSizeNATBackend(bpfMapSizeNATBackend)
+```
+
+"BPFMapSizeNATBackend sets the size for nat back end map. This is the total number of endpoints. This is mostly more than the size of the number of services."
+
+### fn spec.withBpfMapSizeNATFrontend
+
+```ts
+withBpfMapSizeNATFrontend(bpfMapSizeNATFrontend)
+```
+
+"BPFMapSizeNATFrontend sets the size for nat front end map. FrontendMap should be large enough to hold an entry for each nodeport, external IP and each port in each service."
+
+### fn spec.withBpfMapSizeRoute
+
+```ts
+withBpfMapSizeRoute(bpfMapSizeRoute)
+```
+
+"BPFMapSizeRoute sets the size for the routes map.  The routes map should be large enough to hold one entry per workload and a handful of entries per host (enough to cover its own IPs and tunnel IPs)."
+
 ### fn spec.withBpfPSNATPorts
 
 ```ts
@@ -431,6 +520,14 @@ withBpfPSNATPorts(bpfPSNATPorts)
 ```
 
 "BPFPSNATPorts sets the range from which we randomly pick a port if there is a source port collision. This should be within the ephemeral range as defined by RFC 6056 (1024–65535) and preferably outside the  ephemeral ranges used by common operating systems. Linux uses 32768–60999, while others mostly use the IANA defined range 49152–65535. It is not necessarily a problem if this range overlaps with the operating systems. Both ends of the range are inclusive. [Default: 20000:29999]"
+
+### fn spec.withBpfPolicyDebugEnabled
+
+```ts
+withBpfPolicyDebugEnabled(bpfPolicyDebugEnabled)
+```
+
+"BPFPolicyDebugEnabled when true, Felix records detailed information about the BPF policy programs, which can be examined with the calico-bpf command-line tool."
 
 ### fn spec.withChainInsertMode
 
@@ -446,7 +543,15 @@ withChainInsertMode(chainInsertMode)
 withDataplaneDriver(dataplaneDriver)
 ```
 
+"DataplaneDriver filename of the external dataplane driver to use.  Only used if UseInternalDataplaneDriver is set to false."
 
+### fn spec.withDataplaneWatchdogTimeout
+
+```ts
+withDataplaneWatchdogTimeout(dataplaneWatchdogTimeout)
+```
+
+"DataplaneWatchdogTimeout is the readiness/liveness timeout used for Felix's (internal) dataplane driver. Increase this value if you experience spurious non-ready or non-live events when Felix is under heavy load. Decrease the value to get felix to report non-live or non-ready more quickly. [Default: 90s]"
 
 ### fn spec.withDebugDisableLogDropping
 
@@ -502,7 +607,15 @@ withDeviceRouteProtocol(deviceRouteProtocol)
 withDeviceRouteSourceAddress(deviceRouteSourceAddress)
 ```
 
-"This is the source address to use on programmed device routes. By default the source address is left blank, leaving the kernel to choose the source address used."
+"This is the IPv4 source address to use on programmed device routes. By default the source address is left blank, leaving the kernel to choose the source address used."
+
+### fn spec.withDeviceRouteSourceAddressIPv6
+
+```ts
+withDeviceRouteSourceAddressIPv6(deviceRouteSourceAddressIPv6)
+```
+
+"This is the IPv6 source address to use on programmed device routes. By default the source address is left blank, leaving the kernel to choose the source address used."
 
 ### fn spec.withDisableConntrackInvalidCheck
 
@@ -660,7 +773,7 @@ withInterfaceRefreshInterval(interfaceRefreshInterval)
 withIpipEnabled(ipipEnabled)
 ```
 
-
+"IPIPEnabled overrides whether Felix should configure an IPIP interface on the host. Optional as Felix determines this based on the existing IP pools. [Default: nil (unset)]"
 
 ### fn spec.withIpipMTU
 
@@ -764,7 +877,7 @@ withIptablesRefreshInterval(iptablesRefreshInterval)
 withIpv6Support(ipv6Support)
 ```
 
-
+"IPv6Support controls whether Felix enables support for IPv6 (if supported by the in-use dataplane)."
 
 ### fn spec.withKubeNodePortRanges
 
@@ -783,6 +896,14 @@ withKubeNodePortRangesMixin(kubeNodePortRanges)
 "KubeNodePortRanges holds list of port ranges used for service node ports. Only used if felix detects kube-proxy running in ipvs mode. Felix uses these ranges to separate host and workload traffic. [Default: 30000:32767]."
 
 **Note:** This function appends passed data to existing values
+
+### fn spec.withLogDebugFilenameRegex
+
+```ts
+withLogDebugFilenameRegex(logDebugFilenameRegex)
+```
+
+"LogDebugFilenameRegex controls which source code files have their Debug log output included in the logs. Only logs from files with names that match the given regular expression are included.  The filter only applies to Debug level logs."
 
 ### fn spec.withLogFilePath
 
@@ -984,6 +1105,32 @@ withRouteSource(routeSource)
 
 "RouteSource configures where Felix gets its routing information. - WorkloadIPs: use workload endpoints to construct routes. - CalicoIPAM: the default - use IPAM data to construct routes."
 
+### fn spec.withRouteSyncDisabled
+
+```ts
+withRouteSyncDisabled(routeSyncDisabled)
+```
+
+"RouteSyncDisabled will disable all operations performed on the route table. Set to true to run in network-policy mode only."
+
+### fn spec.withRouteTableRanges
+
+```ts
+withRouteTableRanges(routeTableRanges)
+```
+
+"Calico programs additional Linux route tables for various purposes. RouteTableRanges specifies a set of table index ranges that Calico should use. Deprecates`RouteTableRange`, overrides `RouteTableRange`."
+
+### fn spec.withRouteTableRangesMixin
+
+```ts
+withRouteTableRangesMixin(routeTableRanges)
+```
+
+"Calico programs additional Linux route tables for various purposes. RouteTableRanges specifies a set of table index ranges that Calico should use. Deprecates`RouteTableRange`, overrides `RouteTableRange`."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withServiceLoopPrevention
 
 ```ts
@@ -1030,7 +1177,7 @@ withUsageReportingInterval(usageReportingInterval)
 withUseInternalDataplaneDriver(useInternalDataplaneDriver)
 ```
 
-
+"UseInternalDataplaneDriver, if true, Felix will use its internal dataplane programming logic.  If false, it will launch an external dataplane driver and communicate with it over protobuf."
 
 ### fn spec.withVxlanEnabled
 
@@ -1038,7 +1185,7 @@ withUseInternalDataplaneDriver(useInternalDataplaneDriver)
 withVxlanEnabled(vxlanEnabled)
 ```
 
-
+"VXLANEnabled overrides whether Felix should create the VXLAN tunnel device for VXLAN networking. Optional as Felix determines this based on the existing IP pools. [Default: nil (unset)]"
 
 ### fn spec.withVxlanMTU
 
@@ -1046,7 +1193,15 @@ withVxlanEnabled(vxlanEnabled)
 withVxlanMTU(vxlanMTU)
 ```
 
-"VXLANMTU is the MTU to set on the tunnel device. See Configuring MTU [Default: 1440]"
+"VXLANMTU is the MTU to set on the IPv4 VXLAN tunnel device. See Configuring MTU [Default: 1410]"
+
+### fn spec.withVxlanMTUV6
+
+```ts
+withVxlanMTUV6(vxlanMTUV6)
+```
+
+"VXLANMTUV6 is the MTU to set on the IPv6 VXLAN tunnel device. See Configuring MTU [Default: 1390]"
 
 ### fn spec.withVxlanPort
 
@@ -1070,7 +1225,15 @@ withVxlanVNI(vxlanVNI)
 withWireguardEnabled(wireguardEnabled)
 ```
 
-"WireguardEnabled controls whether Wireguard is enabled. [Default: false]"
+"WireguardEnabled controls whether Wireguard is enabled for IPv4 (encapsulating IPv4 traffic over an IPv4 underlay network). [Default: false]"
+
+### fn spec.withWireguardEnabledV6
+
+```ts
+withWireguardEnabledV6(wireguardEnabledV6)
+```
+
+"WireguardEnabledV6 controls whether Wireguard is enabled for IPv6 (encapsulating IPv6 traffic over an IPv6 underlay network). [Default: false]"
 
 ### fn spec.withWireguardHostEncryptionEnabled
 
@@ -1086,7 +1249,23 @@ withWireguardHostEncryptionEnabled(wireguardHostEncryptionEnabled)
 withWireguardInterfaceName(wireguardInterfaceName)
 ```
 
-"WireguardInterfaceName specifies the name to use for the Wireguard interface. [Default: wg.calico]"
+"WireguardInterfaceName specifies the name to use for the IPv4 Wireguard interface. [Default: wireguard.cali]"
+
+### fn spec.withWireguardInterfaceNameV6
+
+```ts
+withWireguardInterfaceNameV6(wireguardInterfaceNameV6)
+```
+
+"WireguardInterfaceNameV6 specifies the name to use for the IPv6 Wireguard interface. [Default: wg-v6.cali]"
+
+### fn spec.withWireguardKeepAlive
+
+```ts
+withWireguardKeepAlive(wireguardKeepAlive)
+```
+
+"WireguardKeepAlive controls Wireguard PersistentKeepalive option. Set 0 to disable. [Default: 0]"
 
 ### fn spec.withWireguardListeningPort
 
@@ -1094,7 +1273,15 @@ withWireguardInterfaceName(wireguardInterfaceName)
 withWireguardListeningPort(wireguardListeningPort)
 ```
 
-"WireguardListeningPort controls the listening port used by Wireguard. [Default: 51820]"
+"WireguardListeningPort controls the listening port used by IPv4 Wireguard. [Default: 51820]"
+
+### fn spec.withWireguardListeningPortV6
+
+```ts
+withWireguardListeningPortV6(wireguardListeningPortV6)
+```
+
+"WireguardListeningPortV6 controls the listening port used by IPv6 Wireguard. [Default: 51821]"
 
 ### fn spec.withWireguardMTU
 
@@ -1102,7 +1289,15 @@ withWireguardListeningPort(wireguardListeningPort)
 withWireguardMTU(wireguardMTU)
 ```
 
-"WireguardMTU controls the MTU on the Wireguard interface. See Configuring MTU [Default: 1420]"
+"WireguardMTU controls the MTU on the IPv4 Wireguard interface. See Configuring MTU [Default: 1440]"
+
+### fn spec.withWireguardMTUV6
+
+```ts
+withWireguardMTUV6(wireguardMTUV6)
+```
+
+"WireguardMTUV6 controls the MTU on the IPv6 Wireguard interface. See Configuring MTU [Default: 1420]"
 
 ### fn spec.withWireguardRoutingRulePriority
 
@@ -1111,6 +1306,14 @@ withWireguardRoutingRulePriority(wireguardRoutingRulePriority)
 ```
 
 "WireguardRoutingRulePriority controls the priority value to use for the Wireguard routing rule. [Default: 99]"
+
+### fn spec.withWorkloadSourceSpoofing
+
+```ts
+withWorkloadSourceSpoofing(workloadSourceSpoofing)
+```
+
+"WorkloadSourceSpoofing controls whether pods can use the allowedSourcePrefixes annotation to send traffic with a source IP address that is not theirs. This is disabled by default. When set to \"Any\", pods can request any prefix."
 
 ### fn spec.withXdpEnabled
 
@@ -1186,7 +1389,7 @@ withProtocol(protocol)
 
 ## obj spec.routeTableRange
 
-"Calico programs additional Linux route tables for various purposes.  RouteTableRange specifies the indices of the route tables that Calico should use."
+"Deprecated in favor of RouteTableRanges. Calico programs additional Linux route tables for various purposes. RouteTableRange specifies the indices of the route tables that Calico should use."
 
 ### fn spec.routeTableRange.withMax
 
@@ -1197,6 +1400,26 @@ withMax(max)
 
 
 ### fn spec.routeTableRange.withMin
+
+```ts
+withMin(min)
+```
+
+
+
+## obj spec.routeTableRanges
+
+"Calico programs additional Linux route tables for various purposes. RouteTableRanges specifies a set of table index ranges that Calico should use. Deprecates`RouteTableRange`, overrides `RouteTableRange`."
+
+### fn spec.routeTableRanges.withMax
+
+```ts
+withMax(max)
+```
+
+
+
+### fn spec.routeTableRanges.withMin
 
 ```ts
 withMin(min)

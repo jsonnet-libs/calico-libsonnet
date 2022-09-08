@@ -190,6 +190,8 @@
     withKubeNodePortRanges(kubeNodePortRanges): { spec+: { kubeNodePortRanges: if std.isArray(v=kubeNodePortRanges) then kubeNodePortRanges else [kubeNodePortRanges] } },
     '#withKubeNodePortRangesMixin':: d.fn(help='"KubeNodePortRanges holds list of port ranges used for service node ports. Only used if felix detects kube-proxy running in ipvs mode. Felix uses these ranges to separate host and workload traffic. [Default: 30000:32767]."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='kubeNodePortRanges', type=d.T.array)]),
     withKubeNodePortRangesMixin(kubeNodePortRanges): { spec+: { kubeNodePortRanges+: if std.isArray(v=kubeNodePortRanges) then kubeNodePortRanges else [kubeNodePortRanges] } },
+    '#withLogDebugFilenameRegex':: d.fn(help='"LogDebugFilenameRegex controls which source code files have their Debug log output included in the logs. Only logs from files with names that match the given regular expression are included.  The filter only applies to Debug level logs."', args=[d.arg(name='logDebugFilenameRegex', type=d.T.string)]),
+    withLogDebugFilenameRegex(logDebugFilenameRegex): { spec+: { logDebugFilenameRegex: logDebugFilenameRegex } },
     '#withLogFilePath':: d.fn(help='"LogFilePath is the full path to the Felix log. Set to none to disable file logging. [Default: /var/log/calico/felix.log]"', args=[d.arg(name='logFilePath', type=d.T.string)]),
     withLogFilePath(logFilePath): { spec+: { logFilePath: logFilePath } },
     '#withLogPrefix':: d.fn(help='"LogPrefix is the log prefix that Felix uses when rendering LOG rules. [Default: calico-packet]"', args=[d.arg(name='logPrefix', type=d.T.string)]),

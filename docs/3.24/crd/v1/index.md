@@ -1,5 +1,5 @@
 ---
-permalink: /3.22/crd/v1/
+permalink: /3.24/crd/v1/
 ---
 
 # crd.v1

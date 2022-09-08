@@ -14,6 +14,7 @@ permalink: /3.21/crd/v1/
 * [globalNetworkPolicy](globalNetworkPolicy.md)
 * [globalNetworkSet](globalNetworkSet.md)
 * [hostEndpoint](hostEndpoint.md)
+* [ipReservation](ipReservation.md)
 * [ipamBlock](ipamBlock.md)
 * [ipamConfig](ipamConfig.md)
 * [ipamHandle](ipamHandle.md)
