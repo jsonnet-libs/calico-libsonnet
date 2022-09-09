@@ -2,707 +2,707 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.17/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.18/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.19/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.20/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/ipReservation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.21/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/ipReservation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.22/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/ipReservation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.23/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/bgpConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/bgpPeer/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/blockAffinity/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/clusterInformation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/felixConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/globalNetworkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/globalNetworkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/hostEndpoint/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/ipReservation/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/ipamBlock/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/ipamConfig/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/ipamHandle/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/kubeControllersConfiguration/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/networkPolicy/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://jsonnet-libs.github.io/calico-libsonnet/3.24/crd/v1/networkSet/</loc>
-         <lastmod>2022-09-08</lastmod>
+         <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
