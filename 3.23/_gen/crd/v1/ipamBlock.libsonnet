@@ -47,7 +47,7 @@
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'IPAMBlock',
   } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
-    'tanka.dev/namespaced': 'true',
+    'tanka.dev/namespaced': 'false',
   }),
   '#spec':: d.obj(help='"IPAMBlockSpec contains the specification for an IPAMBlock resource."'),
   spec: {

@@ -47,7 +47,7 @@
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'FelixConfiguration',
   } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
-    'tanka.dev/namespaced': 'true',
+    'tanka.dev/namespaced': 'false',
   }),
   '#spec':: d.obj(help='"FelixConfigurationSpec contains the values of the Felix configuration."'),
   spec: {

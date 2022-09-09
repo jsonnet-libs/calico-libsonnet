@@ -47,7 +47,7 @@
     apiVersion: 'crd.projectcalico.org/v1',
     kind: 'IPAMConfig',
   } + self.metadata.withName(name=name) + self.metadata.withAnnotations(annotations={
-    'tanka.dev/namespaced': 'true',
+    'tanka.dev/namespaced': 'false',
   }),
   '#spec':: d.obj(help='"IPAMConfigSpec contains the specification for an IPAMConfig resource."'),
   spec: {
